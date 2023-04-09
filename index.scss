@@ -1,0 +1,659 @@
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("font/SFPro/SFProDisplay-Regular.ttf");
+}
+
+// colors
+$dark: black;
+$dark-grad: linear-gradient(112.1deg, rgb(0, 0, 0) 11.4%, #192227 70.2%);
+/*
+$accent: #7eb6e0;
+*/
+$accent: #74d8f1;
+$mid: #383838;
+$higher: #484848;
+$lighter: #686868;
+$light: #d9d9d9;
+$light-grad: linear-gradient(112.1deg, #d9d9d9 11.4%, #96c1db 70.2%);
+
+$font: "SF Pro Display";
+
+$size: calc(1.4vw + 0.5vh);
+$smallsize: calc($size * 0.5);
+$smallersize: calc($size * 0.7);
+$defsize: calc($size * 0.8);
+$midsize: calc($size * 1.0);
+$bigsize: calc($size * 2);
+
+$hover: 0.05s ease-in-out;
+$slide: 0.8s ease-in-out;
+$dropdown: 0.4s ease-out;
+
+$anim-appear: 0.6s appear ease-in-out;
+$background-animation: 10.6s background-animation linear infinite;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'SF Pro Display', Serif;
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@mixin icon-set {
+  padding: 0;
+  margin: 0;
+  display: inline;
+  fill: $light;
+}
+
+@mixin def-text {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: $defsize;
+}
+
+@mixin small-text {
+  @include def-text;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: $smallsize;
+}
+
+@mixin smaller-text {
+  @include def-text;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: $smallersize;
+}
+
+
+@mixin mid-text {
+  @include def-text;
+  font-weight: 600;
+  font-size: $midsize;
+}
+
+@mixin big-text {
+  @include def-text;
+  font-weight: 600;
+  font-size: $bigsize;
+}
+
+.mid-text {
+  @include mid-text;
+}
+
+
+@mixin short {
+  max-height: 10%;
+  min-height: 10%;
+}
+
+@mixin dark-theme {
+  background: $dark;
+  color: $light;
+}
+
+@mixin light-theme {
+  color: $dark;
+  background: $light;
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-end {
+  justify-content: flex-end;
+}
+
+@mixin centered {
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin evenly {
+  justify-content: space-evenly;
+}
+
+@mixin banner-set {
+  aspect-ratio: 21/9;
+  display: flex;
+  padding: 30px;
+}
+
+@mixin banner-corner-set {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+@mixin banner-center-set {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin column {
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.banner-image {
+  @include banner-set;
+  background-image: url("notfound_21_9.jpg");
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: cover;
+  position: relative;
+  z-index: -100;
+}
+
+.banner-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* replace with your desired color */
+  z-index: 0;
+}
+
+@mixin absolute-covered {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.banner-description {
+  @include def-text;
+  @include banner-set;
+  @include banner-corner-set;
+  @include absolute-covered;
+
+  z-index: 1;
+}
+
+.banner-description-center {
+  @include mid-text;
+  @include banner-set;
+  @include centered;
+  @include absolute-covered;
+
+  z-index: 1;
+}
+
+.banner-full-description {
+  @include mid-text;
+  @include banner-set;
+  @include centered;
+  @include absolute-covered;
+  text-align: center;
+
+  @include column;
+
+  z-index: 1;
+}
+
+.banner-full-description p {
+  max-width: 80%;
+  font-weight: 400;
+}
+
+.slider-view {
+  display: inline-flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-view.fullscreen {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.non-interactive a,
+.non-interactive a:hover{
+  color: $light;
+}
+
+.slider-view a {
+  display: grid;
+  min-width: 100%;
+  max-width: 1000%;
+  transition: $slide;
+}
+
+.slider-view h1, .slider-view p {
+  transition: unset;
+}
+
+.prev,
+.next,
+.slide-pointer-container {
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.prev,
+.next {
+  top: 0;
+  bottom: 0;
+  display: flex;
+  height: 100%;
+  width: calc($size * 3);
+  padding: calc($size * 0.4);
+  background-color: rgba(0,0,0,0.4);
+  transform: translateY(0%);
+  align-items: center;
+  opacity: 1;
+}
+
+
+.prev .icon,
+.next .icon {
+}
+
+.slide-pointer-container {
+  top: unset;
+  right: 50%;
+  bottom: 10%;
+  width: auto;
+  height: auto;
+  transform: translateX(50%);
+}
+
+.slide-pointer {
+  border-radius: 100%;
+  min-height: calc($size * 0.4);
+  min-width: calc($size * 0.4);
+  background-color: $light;
+  transition: $slide;
+  margin: calc($size * 0.2)
+}
+
+.slide-pointer.highlighted {
+  background-color: $accent;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.padded {
+  padding: calc($size * 1);
+}
+
+.footer-disclaimer {
+  @include small-text;
+  @include centered;
+  @include column;
+  display:flex;
+  align-content: space-around;
+  padding: calc($size * 1);
+  text-align: center;
+}
+
+.footer-disclaimer p {
+  font-weight: 700;
+  max-width: 60%;
+}
+
+.footer-list-head {
+  @include smaller-text;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-bottom: calc($size * 1);
+}
+.footer-list-item a, .footer-list-item p {
+  @include small-text;
+  color: $lighter;
+  font-weight: 400;
+}
+
+.footer-list-item {
+  padding-bottom: calc($size * 0.1);
+}
+
+.footer-list-item:hover {
+  /*transform: scale(1.2) translateX(10%);*/
+}
+
+.footer-list {
+  color: $light;
+  list-style-type: none;
+  transition: $hover;
+}
+
+.column {
+  @include column;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  max-width: 100%;
+}
+
+.dark {
+  @include dark-theme;
+}
+.light {
+  @include light-theme;
+}
+
+.def-text {
+  @include def-text;
+}
+
+a {
+  text-decoration: none;
+  color: $light;
+}
+
+a:hover {
+  color: $accent;
+  transition: $hover;
+}
+
+a:hover .banner-image {
+  color: $light;
+}
+
+/*h1, h2, h3, h4, h5, h6, p, span {
+  font-family: "SF Pro Display";
+}*/
+
+// SVG
+
+.icon-interactive:hover path,
+.icon-interactive:hover circle,
+.icon-interactive:hover ellipse,
+.icon-interactive:hover rect,
+.icon-interactive:hover text, {
+  fill: $accent;
+  transition: $hover;
+}
+.icon {
+  @include icon-set;
+}
+
+.light .icon path,
+.light .icon circle,
+.light .icon ellipse,
+.light .icon rect,
+.light .icon text,
+.light-theme .icon path,
+.light-theme .icon circle,
+.light-theme .icon ellipse,
+.light-theme .icon rect,
+.light-theme .icon text{
+  fill: $dark;
+}
+
+.short {
+  @include short;
+}
+
+// icons
+
+.row {
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  max-width: 100%;
+  padding: 0.5em;
+}
+
+.flex {
+  @include flex;
+}
+
+.flex-center {
+  @include centered;
+}
+
+@keyframes appear {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    filter: unset;
+  }
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: 20% 80%;
+  }
+  50% {
+    background-position: 80% 80%;
+  }
+  75% {
+    background-position: 90% 40%;
+  }
+  100% {
+    background-position: 20% 80%;
+  }
+}
+
+.dropdown-set.dark {
+  color: $light;
+  background: $dark-grad;
+  background-size: 400% 400%;
+  animation: $background-animation;
+}
+
+.dropdown-set.light {
+  color: $dark;
+  background: $light-grad;
+  background-size: 400% 400%;
+  animation: $background-animation;
+}
+
+.dropdown-set {
+  position: fixed;
+  opacity: 0;
+  z-index: 10;
+  min-width: 90%;
+  left: 5%;
+  right: 5%;
+  min-height: unset;
+  max-height: unset;
+  overflow: hidden;
+  transition: $slide;
+  justify-content: space-evenly;
+  align-items: center;
+  bottom: 100%;
+  border-radius: $size;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 calc($size * 0.5) $size calc($size * (-0.2)), rgba(0, 0, 0, 0.3) 0 calc($size * 0.3) calc($size * 0.6) calc($size * -0.3), rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  filter: blur(5px);
+
+  background-size: 400% 400%;
+  animation: $background-animation;
+}
+
+.dropdown-set div {
+  margin: 0;
+}
+
+.dropdown-set div:first-child {
+
+}
+
+.dropdown-set div:first-child a {
+  transition: $slide;
+  @include mid-text;
+  padding: calc($size * 0.4);
+}
+
+.dropdown-set div:last-child {
+  transition: unset;
+  min-width: 90%;
+  min-height: 50%;
+}
+
+.dropdown-set div:last-child a {
+  transition: $slide;
+  border: none;
+}
+
+.dropdown-set .banner-image {
+  display: none;
+  transition: unset;
+  animation: unset;
+  border-radius: $size;
+}
+
+.dropdown-shown {
+  transform: translateY(calc($size * 25)) scale(1);
+  opacity: 1;
+  filter: unset;
+}
+
+.dropdown-set .banner-image::after {
+  background-color: transparent;
+}
+
+.dropdown-focused {
+  color: $accent;
+}
+
+.dropdown-focused .banner-image {
+  display: block;
+  animation: $anim-appear;
+}
+
+.notification {
+  justify-content: space-around;
+  @include smaller-text;
+}
+
+.notification {
+  padding: $size;
+  min-width: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+}
+
+.notification.dropdown-shown:hover {
+}
+
+.notification.dropdown-shown {
+  transform: translateY(20vh) translateX(-50%);
+}
+
+.mobile-aspect-ratio {
+  aspect-ratio: 9/12;
+  @include mid-text;
+  align-items: center;
+}
+
+// device elements
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+
+}
+
+
+//semantic elements
+
+header {
+  @include short;
+  max-width: 100%;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+header {
+
+}
+
+.foot-container {
+  flex-direction: row;
+}
+
+
+
+.dark {
+  @include dark-theme;
+}
+
+footer {
+  z-index: 15;
+}
+
+.foot-label {
+  z-index: 102;
+  top: 0;
+  position: sticky;
+}
+.foot-container {
+  position: relative;
+  align-items: flex-start;
+  z-index: 101;
+}
+
+@media (max-width: 600px) {
+  .foot-container {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+
+  .footer-list {
+    font-size: $bigsize;
+    padding: calc($size * 1);
+  }
+
+  .notification {
+    padding: $size;
+    min-width: 90%;
+    left: 5%;
+    right: 5%;
+    transform: translateY(calc(10vh)) scale(1);
+  }
+
+  .notification.dropdown-shown {
+    transform: translateY(300%);
+  }
+
+}
+
