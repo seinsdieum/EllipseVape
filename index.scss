@@ -20,7 +20,7 @@ $light-grad: linear-gradient(112.1deg, #d9d9d9 11.4%, #96c1db 70.2%);
 
 $font: "SF Pro Display";
 
-$size: calc(1.4vw + 0.5vh);
+$size: calc(1vw + 1vh);
 $smallsize: calc($size * 0.5);
 $smallersize: calc($size * 0.7);
 $defsize: calc($size * 0.8);
@@ -322,7 +322,7 @@ $background-animation: 10.6s background-animation linear infinite;
 }
 
 .footer-disclaimer {
-  @include small-text;
+  @include smaller-text;
   @include centered;
   @include column;
   display:flex;
@@ -333,8 +333,7 @@ $background-animation: 10.6s background-animation linear infinite;
 
 .footer-disclaimer p {
   font-weight: 700;
-  max-width: 60%;
-  text-indent: 1px;
+  max-width: 70%;
 }
 
 .footer-list-head {
@@ -510,7 +509,7 @@ a:hover .banner-image {
   transition: $slide;
   justify-content: space-evenly;
   align-items: center;
-  bottom: 100%;
+  top: 0;
   border-radius: $size;
   box-shadow: rgba(50, 50, 93, 0.25) 0 calc($size * 0.5) $size calc($size * (-0.2)), rgba(0, 0, 0, 0.3) 0 calc($size * 0.3) calc($size * 0.6) calc($size * -0.3), rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   filter: blur(5px);
@@ -552,7 +551,7 @@ a:hover .banner-image {
 }
 
 .dropdown-shown {
-  transform: translateY(calc($size * 25)) scale(1);
+  transform: translateY(calc($size * 3)) scale(1);
   opacity: 1;
   filter: unset;
 }
@@ -576,6 +575,7 @@ a:hover .banner-image {
 }
 
 .notification {
+  z-index: 100;
   padding: $size;
   min-width: auto;
   left: 50%;
@@ -584,17 +584,31 @@ a:hover .banner-image {
 }
 
 .notification.dropdown-shown:hover {
+  box-shadow: rgba(48, 93, 120, 0.25) 0 calc($size * 0.5) $size calc($size * (-0.2)), rgb(107, 118, 139) 0 calc($size * 0.3) calc($size * 0.6) calc($size * -0.3), rgba(31, 82, 132, 0.35) 0px -2px 6px 0px inset;
+
 }
 
 .notification.dropdown-shown {
-  transform: translateY(20vh) translateX(-50%);
+  transform: translateY(calc($size * 3)) translateX(-50%);
+}
+
+@mixin mobile-set() {
+  aspect-ratio: 9/12;
+  @include mid-text;
 }
 
 .mobile-aspect-ratio {
-  aspect-ratio: 9/12;
-  @include mid-text;
-  align-items: center;
-  justify-content: center;
+  @include mobile-set;
+}
+
+.mobile-aspect-ratio .banner-description,
+.mobile-aspect-ratio .banner-description-center,
+.mobile-aspect-ratio .banner-full-description {
+  @include mobile-set;
+}
+
+.mobile-aspect-ratio .banner-description h1 {
+  padding: $size;
 }
 
 // device elements
@@ -695,6 +709,28 @@ footer {
 
   .wide {
     width: calc($size * 4);
+  }
+
+  .dropdown-shown {
+    transform: translateY(calc($size * 7.5)) scale(1);
+  }
+
+  .footer-disclaimer {
+    @include big-text;
+    padding: $size;
+  }
+
+  .dropdown-set {
+  }
+
+  .dropdown-set div:first-child a {
+    text-align: center;
+    @include big-text;
+    padding: $size;
+  }
+
+  .footer-disclaimer p {
+    max-width: 90%
   }
 
 }

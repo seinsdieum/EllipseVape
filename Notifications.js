@@ -3,6 +3,6 @@ const InvalidDataLight = new Notification(false,"Неверный ввод", fal
 
 let ClubInviter = new Notification(clubIcon,"Ellipse Club - Платформа для пользователей устройствами Ellipse", true)
 
-const FormSubmitDark = new Notification(false,"Ваша заявка отправлена, спасибо!", true)
+const FormSubmitDark = new Notification(false,"Ваша заявка отправлена, спасибо!", false)
 const FormSubmitLight = new Notification(false,"Ваша заявка отправлена, спасибо!", false)
 

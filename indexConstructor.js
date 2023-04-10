@@ -48,8 +48,8 @@ body.appendChild(goodsDropdown.menu)
 const navigationDropdown = new DropdownList
 (
     [
-        LinkText("", "Ellipstore"),
-            LinkText("", "Ellipse Club"),
+        LinkText("index.html", "Ellipstore"),
+            LinkText("index.html", "Ellipse Club"),
             LinkText("", "Каталог"),
             LinkText("", "Поддержка"),
         ],
