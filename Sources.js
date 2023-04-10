@@ -15,4 +15,4 @@ const MoreIcon = iconPath + "more.svg"
 
 //photos
 
-
+const NotFound = "notfound_21_9.jpg"

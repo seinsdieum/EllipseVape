@@ -1,5 +1,7 @@
 @font-face {
   font-family: "SF Pro Display";
+  -webkit-font-feature-settings: normal;
+  -moz-font-feature-settings: normal;
   src: url("font/SFPro/SFProDisplay-Regular.ttf");
 }
 /*
@@ -8,7 +10,7 @@ $accent: #7eb6e0;
 * {
   padding: 0;
   margin: 0;
-  font-family: "SF Pro Display", Serif;
+  font-family: "SF Pro Display", serif;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -61,6 +63,7 @@ $accent: #7eb6e0;
   bottom: 0;
   left: 0;
   right: 0;
+  vertical-align: center;
   z-index: 1;
 }
 
@@ -81,6 +84,8 @@ $accent: #7eb6e0;
   bottom: 0;
   left: 0;
   right: 0;
+  vertical-align: center;
+  align-self: center;
   z-index: 1;
 }
 
@@ -102,6 +107,7 @@ $accent: #7eb6e0;
   left: 0;
   right: 0;
   text-align: center;
+  vertical-align: center;
   flex-direction: column;
   justify-content: center;
   z-index: 1;
@@ -225,6 +231,7 @@ $accent: #7eb6e0;
 .footer-disclaimer p {
   font-weight: 700;
   max-width: 60%;
+  text-indent: 1px;
 }
 
 .footer-list-head {
@@ -232,10 +239,8 @@ $accent: #7eb6e0;
   margin: 0;
   font-weight: 500;
   font-size: calc((1.4vw + 0.5vh) * 0.8);
-  padding: 0;
-  margin: 0;
-  font-weight: 500;
-  font-size: calc((1.4vw + 0.5vh) * 0.7);
+  font-weight: 600;
+  font-size: calc((1.4vw + 0.5vh) * 1);
   text-transform: uppercase;
   font-weight: 500;
   padding-bottom: calc((1.4vw + 0.5vh) * 1);
@@ -249,13 +254,13 @@ $accent: #7eb6e0;
   padding: 0;
   margin: 0;
   font-weight: 500;
-  font-size: calc((1.4vw + 0.5vh) * 0.5);
+  font-size: calc((1.4vw + 0.5vh) * 0.7);
   color: #686868;
   font-weight: 400;
 }
 
 .footer-list-item {
-  padding-bottom: calc((1.4vw + 0.5vh) * 0.1);
+  padding-bottom: calc((1.4vw + 0.5vh) * 0.15);
 }
 
 .footer-list-item:hover {
@@ -328,6 +333,12 @@ a:hover .banner-image {
   margin: 0;
   display: inline;
   fill: #d9d9d9;
+  height: calc((1.4vw + 0.5vh) * 2);
+  width: calc((1.4vw + 0.5vh) * 6);
+}
+
+.wide {
+  width: calc((1.4vw + 0.5vh) * 2);
 }
 
 .light .icon path,
@@ -512,6 +523,7 @@ a:hover .banner-image {
   font-weight: 600;
   font-size: calc((1.4vw + 0.5vh) * 1);
   align-items: center;
+  justify-content: center;
 }
 
 .mobile {
@@ -564,8 +576,26 @@ footer {
     display: block;
   }
   .footer-list {
+    padding: calc((1.4vw + 0.5vh) * 1.5);
+  }
+  .footer-list-item a {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: calc((1.4vw + 0.5vh) * 0.8);
+    font-weight: 600;
     font-size: calc((1.4vw + 0.5vh) * 2);
-    padding: calc((1.4vw + 0.5vh) * 1);
+    font-weight: 400;
+  }
+  .footer-list-head {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: calc((1.4vw + 0.5vh) * 0.8);
+    font-weight: 600;
+    font-size: calc((1.4vw + 0.5vh) * 2);
+    font-weight: 400;
+    padding-bottom: calc((1.4vw + 0.5vh) * 1);
   }
   .notification {
     padding: calc(1.4vw + 0.5vh);
@@ -576,6 +606,13 @@ footer {
   }
   .notification.dropdown-shown {
     transform: translateY(300%);
+  }
+  .icon {
+    height: calc((1.4vw + 0.5vh) * 4);
+    width: calc((1.4vw + 0.5vh) * 12);
+  }
+  .wide {
+    width: calc((1.4vw + 0.5vh) * 4);
   }
 }
 

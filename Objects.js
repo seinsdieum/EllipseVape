@@ -1,5 +1,10 @@
-const defIconWidth = 180;
-const defIconHeight = 60;
+const vh = visualViewport.height * 0.01
+const vw = visualViewport.width * 0.01
+
+const size = 1.4*vw + 0.5*vh;
+
+const defIconWidth = 6*size;
+const defIconHeight = 3*size;
 
 const dark = "black"
 const light = "#d9d9d9"
@@ -24,7 +29,7 @@ function Line(dark, noPad) {
     return line
 }
 
-function Icon(svgFilePath, width, height, interactive) {
+function Icon(svgFilePath, width, height, interactive, square) {
     let svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 
     svgElement.classList.add("icon");
@@ -32,11 +37,11 @@ function Icon(svgFilePath, width, height, interactive) {
         svgElement.classList.add("icon-interactive")
     }
 
-    if (width) svgElement.setAttribute("width", width)
+/*    if (width) svgElement.setAttribute("width", width)
     else svgElement.setAttribute("width", "auto")
 
     if (height) svgElement.setAttribute("height", height)
-    else svgElement.setAttribute("height", "auto")
+    else svgElement.setAttribute("height", "auto")*/
     let xhr = new XMLHttpRequest();
     xhr.open("GET", svgFilePath, true);
     xhr.onreadystatechange = function () {
@@ -47,18 +52,17 @@ function Icon(svgFilePath, width, height, interactive) {
     };
     xhr.send();
     svgElement.innerHTML
+    if(square) svgElement.classList.add("wide")
     // Return the SVG element
     return svgElement;
 }
 
 function IconObj(svgFilePath, interactive, square) {
     const icon = document.createElement("div")
-    if(!square){
-        icon.style.width = `${defIconWidth}`
-
-    } else icon.style.width = `${defIconHeight}`
-    icon.style.height = `${defIconHeight}`
-    icon.appendChild(Icon(svgFilePath, false, defIconHeight, interactive))
+    const iconWidth = square ? defIconHeight : defIconWidth
+/*    icon.style.width = `${iconWidth}`
+    icon.style.height = `${defIconHeight}`*/
+    icon.appendChild(Icon(svgFilePath, iconWidth, defIconHeight, interactive, square))
     return icon;
 }
 
@@ -68,7 +72,7 @@ function IconLink(svgFilePath, link, interactive, square) {
         linkObj.href = link;
     }
     const iconWidth = square ? defIconHeight : defIconWidth;
-    linkObj.appendChild(Icon(svgFilePath, iconWidth, defIconHeight, interactive))
+    linkObj.appendChild(Icon(svgFilePath, iconWidth, defIconHeight, interactive, square))
     return linkObj
 }
 
@@ -184,7 +188,7 @@ function FooterList(header, items) {
 
 function LinkText(link, text) {
     const href = document.createElement("a")
-    href.href = link;
+    if(link) href.href = link;
     href.innerText = text;
     return href;
 }
@@ -378,7 +382,7 @@ function Notification(icon, message, dark) {
     this.text = document.createElement("p")
     this.text.innerText = message;
     if(icon) {
-        this.msg.appendChild(IconObj(icon, false))
+        this.msg.appendChild(IconObj(icon, false, true))
     }
     this.msg.appendChild(this.text)
     this.hidden = true;
@@ -513,9 +517,6 @@ function Slider(banners) {
     })
 
     this.Point(pointers[pointedSlide]);
-
-
-
     SlideTimer.start()
 
     return slider;
