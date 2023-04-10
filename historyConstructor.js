@@ -4,43 +4,16 @@ body.appendChild(ClubInviter.msg)
 //header
 const header = Header(true)
 
-const Ellipse = IconLink(ellipseIcon, false, true)
-const Goods = IconLink(goodsIcon, "catalog.html", true, true)
-const Club = IconLink(clubIcon, "club.html", true, true)
+const Ellipse = IconLink(ellipseIcon, "javascript:history.back()", true)
 const More = IconLink(MoreIcon, false, false, true)
 
-Club.addEventListener("mouseenter", () => {
-        ClubInviter.Show()
-})
-More.classList.add("mobile")
-Goods.classList.add("desktop")
-Club.classList.add("desktop")
 
-header.appendChild(Goods)
+More.classList.add("mobile")
+
 header.appendChild(Ellipse)
-header.appendChild(Club)
 header.appendChild(More)
 //dropdown
 
-const tmtBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "TMT 46", false, true)
-const tmtPair = [LinkText("catalog.html", "TMT"), tmtBanner]
-
-const leavesBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "Leaves I", false, true)
-const leavesPair = [LinkText("catalog.html", "Leaves"), leavesBanner]
-
-const surfingemBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "SurfinGem", false, true)
-const surfingemPair = [LinkText("catalog.html", "SurfinGem"), surfingemBanner]
-
-const kaliBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "Kali 8", false, true)
-const kaliPair = [LinkText("catalog.html", "Kali"), kaliBanner]
-
-
-const goodsDropdown = new DropdownMenu([tmtPair, leavesPair, surfingemPair, kaliPair], true)
-Goods.addEventListener("mouseenter", () => {
-    goodsDropdown.DropDown()
-})
-goodsDropdown.menu.classList.add("desktop")
-body.appendChild(goodsDropdown.menu)
 
 //
 
@@ -49,16 +22,16 @@ const navigationDropdown = new DropdownList
 (
     [
         LinkText("", "Ellipstore"),
-            LinkText("", "Ellipse Club"),
-            LinkText("", "Каталог"),
-            LinkText("", "Поддержка"),
-        ],
+        LinkText("", "Ellipse Club"),
+        LinkText("", "Каталог"),
+        LinkText("", "Поддержка"),
+    ],
     true
 )
 body.appendChild(navigationDropdown.menu)
 navigationDropdown.menu.classList.add("mobile")
 More.addEventListener("mousedown", () => {
-        navigationDropdown.DropDown()
+    navigationDropdown.DropDown()
 })
 //
 
@@ -70,17 +43,13 @@ body.appendChild(header)
 //slider
 
 //slidebanners
-const slideBanner1 = Banner("catalog.html", vapePath + "TMT/Present/1_21_9.jpg",
-    "TMT-46 - Релиз в июне", false, true)
-const slideBanner2 = Banner("catalog.html", vapePath + "TMT/Present/1_21_9.jpg",
-    "Leaves I - Спокойствие для всех", false, true)
-const slideBanner3 = InformationBanner(ellipsePath + "weDo_21_9.jpg", "Что мы производим?" ,
-    "Мы производим вейп-устройства, которые дарят удовольствие каждому желающему. " +
-    "Наши компоненты производятся в Тайване, и благодаря этому устройства будут служить вам большой срок. " +
-    "Всё, что мы делаем - исключительно ради вас.", true)
+const slideBanner1 = Banner("catalog.html", NotFound,
+    "TMT-45 - Наш первый вейп", false, true)
+const slideBanner2 = Banner("https://goo.gl/maps/tVWbhh9DWYF3AqsU6", ellipsePath + "head_21_9.jpg",
+    "Г. Минск - наш первый штаб", false, true)
 //
 
-const slider = new Slider([slideBanner1, slideBanner2, slideBanner3])
+const slider = new Slider([slideBanner1, slideBanner2])
 
 body.appendChild(slider)
 
@@ -108,7 +77,7 @@ body.appendChild(catalogBanner)
 //
 
 //history banner
-const historyBanner = Banner("history.html", ellipsePath + "history1_21_9.jpg",
+const historyBanner = Banner("catalog.html", ellipsePath + "history1_21_9.jpg",
     "История бренда", true, true)
 body.appendChild(historyBanner)
 //

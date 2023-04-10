@@ -1,5 +1,7 @@
 @font-face {
   font-family: "SF Pro Display";
+  -webkit-font-feature-settings: normal;
+  -moz-font-feature-settings: normal;
   src: url("font/SFPro/SFProDisplay-Regular.ttf");
 }
 
@@ -24,6 +26,7 @@ $smallersize: calc($size * 0.7);
 $defsize: calc($size * 0.8);
 $midsize: calc($size * 1.0);
 $bigsize: calc($size * 2);
+$largesize: calc($size * 2.8);
 
 $hover: 0.05s ease-in-out;
 $slide: 0.8s ease-in-out;
@@ -35,7 +38,8 @@ $background-animation: 10.6s background-animation linear infinite;
 * {
   padding: 0;
   margin: 0;
-  font-family: 'SF Pro Display', Serif;
+  font-family: 'SF Pro Display', serif;
+  
 
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -47,6 +51,8 @@ $background-animation: 10.6s background-animation linear infinite;
   margin: 0;
   display: inline;
   fill: $light;
+  height: calc($size * 2);
+  width: calc($size * 6);
 }
 
 @mixin def-text {
@@ -83,6 +89,12 @@ $background-animation: 10.6s background-animation linear infinite;
   @include def-text;
   font-weight: 600;
   font-size: $bigsize;
+}
+
+@mixin large-text {
+  @include def-text;
+  font-weight: 600;
+  font-size: $largesize;
 }
 
 .mid-text {
@@ -166,6 +178,8 @@ $background-animation: 10.6s background-animation linear infinite;
   z-index: 0;
 }
 
+
+
 @mixin absolute-covered {
   position: absolute;
   top: 0;
@@ -179,6 +193,7 @@ $background-animation: 10.6s background-animation linear infinite;
   @include banner-set;
   @include banner-corner-set;
   @include absolute-covered;
+  vertical-align: center;
 
   z-index: 1;
 }
@@ -188,7 +203,8 @@ $background-animation: 10.6s background-animation linear infinite;
   @include banner-set;
   @include centered;
   @include absolute-covered;
-
+  vertical-align: center;
+  align-self: center;
   z-index: 1;
 }
 
@@ -198,7 +214,7 @@ $background-animation: 10.6s background-animation linear infinite;
   @include centered;
   @include absolute-covered;
   text-align: center;
-
+  vertical-align: center;
   @include column;
 
   z-index: 1;
@@ -318,22 +334,23 @@ $background-animation: 10.6s background-animation linear infinite;
 .footer-disclaimer p {
   font-weight: 700;
   max-width: 60%;
+  text-indent: 1px;
 }
 
 .footer-list-head {
-  @include smaller-text;
+  @include mid-text;
   text-transform: uppercase;
   font-weight: 500;
   padding-bottom: calc($size * 1);
 }
 .footer-list-item a, .footer-list-item p {
-  @include small-text;
+  @include smaller-text;
   color: $lighter;
   font-weight: 400;
 }
 
 .footer-list-item {
-  padding-bottom: calc($size * 0.1);
+  padding-bottom: calc($size * 0.15);
 }
 
 .footer-list-item:hover {
@@ -398,6 +415,10 @@ a:hover .banner-image {
 }
 .icon {
   @include icon-set;
+}
+
+.wide {
+  width: calc($size * 2);
 }
 
 .light .icon path,
@@ -573,6 +594,7 @@ a:hover .banner-image {
   aspect-ratio: 9/12;
   @include mid-text;
   align-items: center;
+  justify-content: center;
 }
 
 // device elements
@@ -639,8 +661,19 @@ footer {
   }
 
   .footer-list {
-    font-size: $bigsize;
-    padding: calc($size * 1);
+    padding: calc($size * 1.5);
+  }
+
+  .footer-list-item a {
+    @include big-text;
+    font-weight: 400;
+  }
+
+  .footer-list-head {
+    @include big-text;
+    font-weight: 400;
+    padding-bottom: calc($size * 1);
+
   }
 
   .notification {
@@ -653,6 +686,15 @@ footer {
 
   .notification.dropdown-shown {
     transform: translateY(300%);
+  }
+
+  .icon {
+    height: calc($size * 4);
+    width: calc($size * 12);
+  }
+
+  .wide {
+    width: calc($size * 4);
   }
 
 }
