@@ -521,3 +521,114 @@ function Slider(banners) {
 
     return slider;
 }
+
+function Item(imgsource, caption, link) {
+    const href = document.createElement("a")
+    if(link) href.href = link;
+
+    const container = document.createElement("div")
+    container.classList.add("slide-item")
+
+    const item = document.createElement("figure")
+
+
+    const img = document.createElement("img")
+    if(imgsource) img.src = imgsource
+    const figcaption = document.createElement("figcaption")
+    if(caption) figcaption.innerText = caption
+
+    container.appendChild(item)
+    href.appendChild(container)
+    item.appendChild(img)
+    item.appendChild(figcaption)
+
+    return href
+}
+
+function ItemSlider(ItemsList, dark) {
+    this.slider = document.createElement("div")
+    this.slider.classList.add("item-slider-view")
+    /*this.slider.classList.add(dark ? "dark" : "light")*/
+    const slidecounter = ItemsList.length;
+    this.sliderList = []
+    for(let i = 0; i < slidecounter; i++) {
+        this.sliderList.push(ItemsList[i])
+        this.slider.appendChild(ItemsList[i])
+        /*ItemsList[i].style.transform = `translateX(${i*50}%)`*/
+    }
+
+    this.prev = IconObj("left.svg", true)
+    this.next = IconObj("right.svg", true)
+
+    this.prev.className = "prev"
+    this.next.className = "next"
+
+    this.slider.appendChild(this.prev)
+    this.slider.appendChild(this.next)
+
+    let translation = 0;
+    let current = 5
+    current = parseInt(`${slidecounter/2}`)
+
+    this.ApplyTranslation = function() {
+        for (let i = 0; i < slidecounter; i++) {
+            this.sliderList[i].style.transform = `translateX(${translation}%)`
+        }
+    }
+
+    this.Delight = function() {
+        this.sliderList[current].classList.remove("highlighted")
+    }
+
+    this.Highlight = function() {
+        this.sliderList[current].classList.add("highlighted")
+    }
+
+    this.SlideLeft = function() {
+        console.log(100*(slidecounter/2))
+        if(translation < 100*slidecounter/2 - 50){
+            translation += 100;
+            this.Delight()
+            current -= 1;
+            this.Highlight()
+            for (let i = 0; i < slidecounter; i++) {
+                this.sliderList[i].style.transform = `translateX(${translation}%)`
+            }
+            this.ApplyTranslation()
+        }
+    }
+
+    this.SlideRight = function() {
+        if(translation > -1*100*slidecounter/2 + 50){
+            translation -= 100;
+            this.Delight()
+            current+=1;
+            this.Highlight()
+
+            for (let i = 0; i < slidecounter; i++) {
+                this.sliderList[i].style.transform = `translateX(${translation}%)`
+            }
+            this.ApplyTranslation()
+        }
+    }
+
+
+    this.SlideTo = function(n) {
+            translation = -1*100*n;
+            for (let i = 0; i < slidecounter; i++) {
+                this.sliderList[i].style.transform = `translateX(${translation}%)`
+            }
+            current = n;
+        this.ApplyTranslation()
+    }
+
+    this.prev.addEventListener("mousedown", () => {
+        this.SlideLeft()
+    })
+
+    this.next.addEventListener("mousedown", () => {
+        this.SlideRight()
+    })
+
+    /*this.SlideTo(0)*/
+}
