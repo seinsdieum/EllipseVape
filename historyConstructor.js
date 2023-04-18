@@ -17,7 +17,9 @@ header.appendChild(More)
 
 //
 
-//dropdown burger
+//dropdown mobile
+AddDefaultMobileDropdown(true, true)
+/*const closeNavigationDropdown = (LinkText("", "Закрыть"))
 const navigationDropdown = new DropdownList
 (
     [
@@ -25,9 +27,13 @@ const navigationDropdown = new DropdownList
         LinkText("", "Ellipse Club"),
         LinkText("", "Каталог"),
         LinkText("", "Поддержка"),
+        closeNavigationDropdown
     ],
     true
 )
+closeNavigationDropdown.addEventListener("mousedown", () => {
+    navigationDropdown.DropOut()
+})
 body.appendChild(navigationDropdown.menu)
 navigationDropdown.menu.classList.add("mobile")
 More.addEventListener("mousedown", () => {
@@ -35,11 +41,28 @@ More.addEventListener("mousedown", () => {
 })
 //
 
-body.appendChild(header)
+body.appendChild(header)*/
 //
 
 //main part
 
+//itemslider
+
+/*let ItemSl = new ItemSlider(
+    [
+        Item(vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png",
+            "Leaves",
+            "https://vk.com"),
+            Item(vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png",
+                "Leaves",
+                "https://vk.com"),
+            Item(vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png",
+                "Leaves",
+                "https://vk.com")
+    ],
+    true)
+
+body.appendChild(ItemSl.slider)*/
 //slider
 
 //slidebanners

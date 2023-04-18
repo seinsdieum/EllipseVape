@@ -174,7 +174,7 @@ $background-animation: 10.6s background-animation linear infinite;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* replace with your desired color */
+  background-color: rgba(0, 0, 0, 0.4); /* replace with your desired color */
   z-index: 0;
 }
 
@@ -223,6 +223,72 @@ $background-animation: 10.6s background-animation linear infinite;
 .banner-full-description p {
   max-width: 80%;
   font-weight: 400;
+}
+
+.slide-item, .item-slider-view a {
+  @include flex;
+  @include centered;
+  margin: 0;
+  height: 80%;
+  aspect-ratio: 16/9;
+  color: $light;
+  position: relative;
+  /*
+  background-color: white;
+  */
+  z-index: 1;
+  transition: $slide;
+}
+
+.slide-item.highlighted {
+  height: 100%;
+}
+
+
+.slide-item figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include large-text;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.slide-item figcaption {
+  text-align: center;
+}
+
+.slide-item figure img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.slide-item::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: $dark-grad;
+
+  z-index: -1;
+  border-radius: $size;
+}
+
+.item-slider-view {
+  aspect-ratio: 7/3;
+  /*
+  background-image: url("notfound_21_9.jpg");
+  */
+  background-color: $accent;
+
+  display: inline-flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider-view {
@@ -279,6 +345,17 @@ $background-animation: 10.6s background-animation linear infinite;
   background-color: rgba(0,0,0,0.4);
   transform: translateY(0%);
   align-items: center;
+  transition: $slide;
+  opacity: 0;
+}
+
+.banner-image .banner-description {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.slider-view:hover .prev,
+.slider-view:hover .next {
   opacity: 1;
 }
 
@@ -361,6 +438,8 @@ $background-animation: 10.6s background-animation linear infinite;
   list-style-type: none;
   transition: $hover;
 }
+
+
 
 .column {
   @include column;
@@ -509,7 +588,7 @@ a:hover .banner-image {
   transition: $slide;
   justify-content: space-evenly;
   align-items: center;
-  top: 0;
+  top: -100%;
   border-radius: $size;
   box-shadow: rgba(50, 50, 93, 0.25) 0 calc($size * 0.5) $size calc($size * (-0.2)), rgba(0, 0, 0, 0.3) 0 calc($size * 0.3) calc($size * 0.6) calc($size * -0.3), rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   filter: blur(5px);
@@ -551,6 +630,7 @@ a:hover .banner-image {
 }
 
 .dropdown-shown {
+  top:0;
   transform: translateY(calc($size * 3)) scale(1);
   opacity: 1;
   filter: unset;
@@ -597,6 +677,7 @@ a:hover .banner-image {
   @include mid-text;
 }
 
+
 .mobile-aspect-ratio {
   @include mobile-set;
 }
@@ -605,6 +686,10 @@ a:hover .banner-image {
 .mobile-aspect-ratio .banner-description-center,
 .mobile-aspect-ratio .banner-full-description {
   @include mobile-set;
+}
+
+.mobile-aspect-ratio .banner-full-description p {
+  font-size: calc($size * 1.8);
 }
 
 .mobile-aspect-ratio .banner-description h1 {
@@ -731,6 +816,18 @@ footer {
 
   .footer-disclaimer p {
     max-width: 90%
+  }
+
+  .item-slider-view, {
+    aspect-ratio: 3/4;
+  }
+
+  .slide-item {
+    aspect-ratio: 14/16;
+  }
+
+  .banner-full-description {
+    font-size: unset;
   }
 
 }

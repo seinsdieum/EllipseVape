@@ -37,7 +37,10 @@ const kaliPair = [LinkText("catalog.html", "Kali"), kaliBanner]
 
 const goodsDropdown = new DropdownMenu([tmtPair, leavesPair, surfingemPair, kaliPair], true)
 Goods.addEventListener("mouseenter", () => {
-    goodsDropdown.DropDown()
+    const height = header.getBoundingClientRect().top
+    if(height === 0){
+        goodsDropdown.DropDown()
+    }
 })
 goodsDropdown.menu.classList.add("desktop")
 body.appendChild(goodsDropdown.menu)
@@ -45,24 +48,7 @@ body.appendChild(goodsDropdown.menu)
 //
 
 //dropdown burger
-const navigationDropdown = new DropdownList
-(
-    [
-        LinkText("index.html", "Ellipstore"),
-            LinkText("index.html", "Ellipse Club"),
-            LinkText("", "Каталог"),
-            LinkText("", "Поддержка"),
-        ],
-    true
-)
-body.appendChild(navigationDropdown.menu)
-navigationDropdown.menu.classList.add("mobile")
-More.addEventListener("mousedown", () => {
-        navigationDropdown.DropDown()
-})
-//
-
-body.appendChild(header)
+AddDefaultMobileDropdown(true)
 //
 
 //main part
@@ -71,9 +57,9 @@ body.appendChild(header)
 
 //slidebanners
 const slideBanner1 = Banner("catalog.html", vapePath + "TMT/Present/1_21_9.jpg",
-    "TMT-46 - Релиз в июне", false, true)
-const slideBanner2 = Banner("catalog.html", vapePath + "TMT/Present/1_21_9.jpg",
-    "Leaves I - Спокойствие для всех", false, true)
+    "TMT 46. Релиз в июне.", false, true)
+const slideBanner2 = Banner("catalog.html", vapePath + "Leaves/Present/1_21_9.jpg",
+    "Leaves. Лес ваших фантазий.", false, true)
 const slideBanner3 = InformationBanner(ellipsePath + "weDo_21_9.jpg", "Что мы производим?" ,
     "Мы производим вейп-устройства, которые дарят удовольствие каждому желающему. " +
     "Наши компоненты производятся в Тайване, и благодаря этому устройства будут служить вам большой срок. " +
@@ -87,38 +73,40 @@ body.appendChild(slider)
 //
 
 //infoBanner
-const infoBanner = InformationBanner(ellipsePath + "ellipseBlur_21_9.jpg", "Почему стоит выбрать нас?" ,
+const infoBanner = InformationBanner(ellipsePath + "chooseUs_21_9.jpg", "Почему стоит выбрать нас?" ,
     "Мы делаем качественный продукт, поставляемый на мировой рынок, улучшаем показатели наших устройств и " +
     "стараемся значительно снизить вред электронных сигарет, задавая новые тренды в их развитии, а также у нас есть " +
     "круглосуточная поддержка для покупателей, у которых возникли проблемы или имеются вопросы. Экосистема устройств " +
     "Ellipse не оставит вас равнодушными и подарит вам кучу новых возможностей.", true)
-body.appendChild(infoBanner)
 //
 
 //store banner
-const storeBanner = Banner("shop.html", ellipsePath + "shop1_21_9.jpg",
-    "Ellipstore - купи свой девайс", false, true)
-body.appendChild(storeBanner)
+const storeBanner = Banner("shop.html", ellipsePath + "store_21_9.jpg",
+    "Магазин Ellipstore", false, true)
 //
 
 //catalog banner
 const catalogBanner = Banner("catalog.html", ellipsePath + "catalog1_21_9.jpg",
-    "Circle - каталог актуальных испарителей", false, true)
-body.appendChild(catalogBanner)
+    "Каталог вейпов", false, true)
 //
 
 //history banner
-const historyBanner = Banner("history.html", ellipsePath + "history1_21_9.jpg",
+const historyBanner = Banner("history.html", ellipsePath + "history2_21_9.jpg",
     "История бренда", true, true)
-body.appendChild(historyBanner)
 //
 
 
 //club banner
 const clubBanner = Banner("club.html", ellipsePath + "ellipseClub1_21_9.jpg",
     "Ellipse Club", true, true)
-body.appendChild(clubBanner)
 //
+body.appendChild(infoBanner)
+
+body.appendChild(catalogBanner)
+body.appendChild(storeBanner)
+body.appendChild(clubBanner)
+body.appendChild(historyBanner)
+
 
 //
 
