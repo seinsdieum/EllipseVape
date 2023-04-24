@@ -57,6 +57,6 @@ window.addEventListener("resize", () => {
 
 if( window.innerWidth < 500 ) {
     SwitchToMobile()
-} else( window.innerWidth >= 500) {
+} else {
     SwitchToDesktop()
 }
