@@ -2,12 +2,13 @@
   font-family: "SF Pro Display";
   -webkit-font-feature-settings: normal;
   -moz-font-feature-settings: normal;
-  src: url("font/SFPro/SFProDisplay-Regular.ttf");
+  src: url("/font/SFPro/SFProDisplay-Regular.ttf/");
 }
 
 // colors
 $dark: black;
 $dark-grad: linear-gradient(112.1deg, rgb(0, 0, 0) 11.4%, #192227 70.2%);
+$dark-grad2: linear-gradient(112.1deg, rgb(20, 26, 29) 11.4%, #272d34 70.2%);
 /*
 $accent: #7eb6e0;
 */
@@ -34,6 +35,7 @@ $dropdown: 0.4s ease-out;
 
 $anim-appear: 0.6s appear ease-in-out;
 $background-animation: 10.6s background-animation linear infinite;
+$background-side: 30.6s background-side-side ease-in-out infinite;
 
 * {
   padding: 0;
@@ -44,6 +46,11 @@ $background-animation: 10.6s background-animation linear infinite;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+}
+
+@mixin background-anim-set {
+  background-size: 200%;
+  animation: $background-side;
 }
 
 @mixin icon-set {
@@ -159,12 +166,17 @@ $background-animation: 10.6s background-animation linear infinite;
 
 .banner-image {
   @include banner-set;
-  background-image: url("notfound_21_9.jpg");
   background-repeat: no-repeat;
   overflow: hidden;
   background-size: cover;
   position: relative;
   z-index: -100;
+}
+
+.banner-full-description.info h1,
+.banner-full-description.info p {
+  text-align: left;
+  align-self: flex-start;
 }
 
 .banner-image::after {
@@ -178,7 +190,70 @@ $background-animation: 10.6s background-animation linear infinite;
   z-index: 0;
 }
 
+.items-grid .search-hidden {
+  display: none;
+}
 
+.items-grid .search-shown {
+  display: flex;
+}
+
+.search-field {
+  @include flex-end;
+  @include mid-text;
+  justify-content: flex-start;
+  align-items: center;
+  justify-self: center;
+  flex-direction: row;
+  background: $dark-grad;
+  background-size: 200%;
+  background-position: 0% 0%;
+  border-radius: $size;
+  min-width: 80%;
+  min-height: calc($size*2);
+  padding: $size;
+  color: $light;
+  transition: $slide;
+}
+
+
+.search-field,
+.search-field:focus,
+.search-field:active{
+  border: unset;
+  outline: unset;
+}
+
+.search-field:focus {
+  background-position: 80% 80%;
+}
+
+.light .search-field {
+  background: $light-grad;
+  color: $dark;
+}
+
+.banner-image.back-transp::after,
+.back-transp .banner-image::after,
+.light.back-transp
+{
+  background: rgba(0, 0, 0, 0);
+
+}
+
+.light.back-transp h1,
+.light.back-transp p{
+  text-shadow: unset;
+}
+
+.light-grad {
+  background: $light-grad;
+}
+
+.back-transp h1,
+.back-transp p{
+  text-shadow: 0 0 $size $dark ;
+}
 
 @mixin absolute-covered {
   position: absolute;
@@ -406,6 +481,7 @@ $background-animation: 10.6s background-animation linear infinite;
   align-content: space-around;
   padding: calc($size * 1);
   text-align: center;
+
 }
 
 .footer-disclaimer p {
@@ -450,6 +526,13 @@ body {
   padding: 0;
   background: black;
   max-width: 100%;
+  background: $dark-grad;
+}
+
+
+
+body.light {
+  background: $light-grad;
 }
 
 .dark {
@@ -473,7 +556,7 @@ a:hover {
   transition: $hover;
 }
 
-a:hover .banner-image {
+a:hover .banner-image.dark {
   color: $light;
 }
 
@@ -497,6 +580,10 @@ a:hover .banner-image {
 
 .wide {
   width: calc($size * 2);
+}
+
+.short {
+  width: calc($size * 10);
 }
 
 .light .icon path,
@@ -558,6 +645,18 @@ a:hover .banner-image {
   }
   100% {
     background-position: 20% 80%;
+  }
+}
+
+@keyframes background-side-side {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 30% 30%;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
 
@@ -650,17 +749,23 @@ a:hover .banner-image {
 }
 
 .notification {
-  justify-content: space-around;
+  justify-content: flex-start;
   @include smaller-text;
+}
+
+.notification .icon {
+  margin-right: calc($size/1.5);
 }
 
 .notification {
   z-index: 100;
-  padding: $size;
-  min-width: auto;
+  padding: calc($size/1.5);
+  min-width: calc($size);
+  max-width: calc($size*40);
   left: 50%;
   transform: translateX(-50%);
-  height: auto;
+  height: calc($size*3);
+  justify-self: center;
 }
 
 .notification.dropdown-shown:hover {
@@ -707,6 +812,86 @@ a:hover .banner-image {
 }
 
 
+//scroll animations
+
+.scroll-hidden .grid-item {
+  transform: translateX(-25%);
+  opacity: 0;
+}
+
+.scroll-shown .grid-item {
+  transform: unset;
+  opacity: 1;
+}
+
+.scroll-hidden .banner-image,
+nav.scroll-hidden {
+  transform: unset;
+  opacity: 0;
+  filter: blur(calc($size/10));
+  transition: $slide;
+  z-index: -1;
+}
+
+.scroll-hidden .banner-description {
+  transform: translateX(-25%) ;
+  opacity: 0;
+  filter: blur(calc($size/10));
+  transition: $slide;
+}
+
+.scroll-hidden .banner-description-center {
+  transform: translateY(25%) ;
+  opacity: 0;
+  filter: blur(calc($size/10));
+  transition: $slide;
+}
+
+.scroll-hidden .banner-full-description h1 {
+  transform: translateY(calc(-1 * $size * 5));
+  opacity: 0;
+  filter: blur(calc($size/10));
+  transition: $slide;
+}
+
+.scroll-shown .banner-full-description h1 {
+  transform: unset;
+  opacity: 1;
+  filter: unset;
+  transition-delay: 300ms;
+}
+
+.scroll-hidden .banner-full-description p {
+  transform: translateY(calc($size * 5)) ;
+  opacity: 0;
+  filter: blur(calc($size/10));
+  transition: $slide;
+}
+
+.scroll-shown .banner-full-description p {
+  transform: unset;
+  opacity: 1;
+  filter: unset;
+  transition-delay: 600ms;
+}
+
+
+
+.scroll-shown .banner-description,
+.scroll-shown .banner-description-center,
+nav.scroll-shown{
+  transform: unset;
+  opacity: 1;
+  filter: unset;
+  transition-delay: 400ms;
+}
+
+.scroll-shown .banner-image {
+  transform: unset;
+  opacity: 1;
+  filter: unset;
+}
+
 //semantic elements
 
 header {
@@ -714,7 +899,6 @@ header {
   max-width: 100%;
   position: sticky;
   top: 0;
-  bottom: 0;
   z-index: 100;
 }
 
@@ -726,15 +910,24 @@ header {
   flex-direction: row;
 }
 
+.back-grad.dark {
+  background: $dark-grad;
+}
 
+
+.back-grad.light {
+  background: $light-grad;
+}
 
 .dark {
   @include dark-theme;
 }
 
 footer {
-  z-index: 15;
+  position: sticky;
+  z-index: 150;
 }
+
 
 .foot-label {
   z-index: 102;
@@ -746,6 +939,79 @@ footer {
   align-items: flex-start;
   z-index: 101;
 }
+
+.grid-item {
+  width: calc(300px);
+  height: calc(300px);
+  aspect-ratio: 1/1;
+  background: $dark-grad;
+  color: $light;
+  margin: calc($size*2);
+  overflow: hidden;
+  border-radius: calc($size* 1.5);
+  transition: $dropdown;
+  background-size: 400%;
+  @include flex-end;
+  @include flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: darken;
+
+}
+
+.grid-item:hover, .grid-item:focus {
+  transition-delay: 0ms;
+  background-size: 100%;
+  background-position: 50% 80%;
+}
+
+.grid-item img,
+.grid-item.light img{
+  max-height: 80%;
+}
+
+.items-grid {
+  align-self: center;
+  @include flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  background: unset;
+}
+
+nav a {
+  overflow: hidden;
+  margin: calc($size);
+  margin-left: calc($size*5);
+  margin-right: calc($size*5);
+
+}
+
+nav {
+  align-self: center;
+  @include flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.items-grid.light {
+
+
+}
+
+
+.items-grid.light .grid-item {
+  transition: $dropdown;
+  color: $light;
+}
+
+.items-grid.dark .grid-item {
+  background: $light-grad;
+}
+
+
 
 @media (max-width: 600px) {
   .foot-container {
@@ -777,14 +1043,11 @@ footer {
 
   .notification {
     padding: $size;
-    min-width: 90%;
-    left: 5%;
-    right: 5%;
-    transform: translateY(calc(10vh)) scale(1);
+    height: calc($size*5);
+    width: 80%;
   }
 
   .notification.dropdown-shown {
-    transform: translateY(300%);
   }
 
   .icon {
@@ -830,5 +1093,15 @@ footer {
     font-size: unset;
   }
 
+  .grid-item {
+    width: calc(250px);
+    height: calc(250px);
+  }
+
+  .search-field {
+    @include big-text;
+    min-height: calc($size*4);
+    padding: $size;
+  }
 }
 

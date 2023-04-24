@@ -6,3 +6,5 @@ let ClubInviter = new Notification(clubIcon,"Ellipse Club - Платформа �
 const FormSubmitDark = new Notification(false,"Ваша заявка отправлена, спасибо!", false)
 const FormSubmitLight = new Notification(false,"Ваша заявка отправлена, спасибо!", false)
 
+const NotFoundDark = new Notification("img/icons/search.svg", "Товаров не найдено", true)
+
