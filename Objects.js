@@ -193,9 +193,9 @@ function LinkText(link, text) {
     return href;
 }
 
-function Banner(link, source, info, centered, dark) {
+function Banner(link, source, info, centered, dark, transparentBack) {
     const linkObject = document.createElement("a")
-    linkObject.href = link;
+    if(link) linkObject.href = link;
 
     const image = document.createElement("div")
     image.classList.add("banner-image")
@@ -410,7 +410,7 @@ function Notification(icon, message, dark) {
     })
 }
 
-function Slider(banners) {
+function Slider(banners, scrollInteractive) {
     const count = banners.length
     const slider = document.createElement("div")
     slider.classList.add("slider-view")
@@ -439,6 +439,7 @@ function Slider(banners) {
         pointer.addEventListener('mousedown', () => {
             this.SlideTo(i);
         })
+        if(scrollInteractive) banners[i].classList.add("scroll-hidden")
         slider.append(banners[i])
     }
 
@@ -632,3 +633,39 @@ function ItemSlider(ItemsList, dark) {
 
     /*this.SlideTo(0)*/
 }
+
+function GridItem(text, img, link) {
+    const item = document.createElement("div")
+    item.classList.add("grid-item")
+
+    const itemHref = document.createElement("a")
+    const itemImg = document.createElement("img")
+    const itemText = document.createElement("h1")
+    if(link) itemHref.href = link
+    if(img) itemImg.src = img
+    if(text) itemText.innerText = text
+
+    itemHref.appendChild(item)
+    item.appendChild(itemImg)
+    item.appendChild(itemText)
+    return itemHref
+}
+function ItemGrid(dark, itemlist) {
+    this.container = document.createElement("div")
+    this.container.classList.add("items-grid")
+    for(let i = 0; i < itemlist.length; i++) {
+        this.container.appendChild(itemlist[i])
+    }
+}
+
+function loadXMLDoc(source, func) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            func(this);
+        }
+    };
+    xmlhttp.open("GET", source, true);
+    xmlhttp.send();
+}
+

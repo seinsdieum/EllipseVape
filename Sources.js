@@ -1,8 +1,8 @@
 //folders
 
-const iconPath = "img/icons/"
-const vapePath = "img/Vapes/"
-const ellipsePath = "img/ellipse/"
+const iconPath = "/img/icons/"
+const vapePath = "/img/Vapes/"
+const ellipsePath = "/img/ellipse/"
 
 //icons
 
@@ -22,7 +22,8 @@ function AddDefaultMobileDropdown(dark, back) {
     //dropdown mobile
     const closeNavigationDropdown = (LinkText("", "Закрыть"))
     const backLink = LinkText("", "Назад")
-    const navigationDropdown = back ? new DropdownList
+    const navigationDropdown =
+        back ? new DropdownList
     (
         [
             LinkText("", "Ellipstore"),
@@ -60,3 +61,4 @@ function AddDefaultMobileDropdown(dark, back) {
 
     body.appendChild(header)
 }
+
