@@ -47,10 +47,10 @@ function setDevice(xml) {
         }
     }
     else {
-        window.location.replace("../notFound.html")
+        window.location.replace("/notFound.html")
     }
 }
-loadXMLDoc("/items.xml/", setDevice)
+loadXMLDoc("/items.xml", setDevice)
 
 
 

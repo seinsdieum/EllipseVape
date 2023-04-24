@@ -2,7 +2,7 @@
   font-family: "SF Pro Display";
   -webkit-font-feature-settings: normal;
   -moz-font-feature-settings: normal;
-  src: url("/font/SFPro/SFProDisplay-Regular.ttf/");
+  src: url("./font/SFPro/SFProDisplay-Regular.ttf");
 }
 /*
 $accent: #7eb6e0;

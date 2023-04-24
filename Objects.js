@@ -415,8 +415,8 @@ function Slider(banners, scrollInteractive) {
     const slider = document.createElement("div")
     slider.classList.add("slider-view")
     slider.classList.add("non-interactive")
-    const left = IconObj("left.svg", true)
-    const right = IconObj("right.svg", true)
+    const left = IconObj(iconPath + "left.svg", true)
+    const right = IconObj(iconPath + "right.svg", true)
 
     left.className = "prev"
     right.className = "next"
