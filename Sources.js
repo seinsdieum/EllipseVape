@@ -1,8 +1,8 @@
 //folders
 
-const iconPath = "/img/icons/"
-const vapePath = "/img/Vapes/"
-const ellipsePath = "/img/ellipse/"
+const iconPath = "img/icons/"
+const vapePath = "img/Vapes/"
+const ellipsePath = "img/ellipse/"
 
 //icons
 
