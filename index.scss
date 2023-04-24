@@ -2,7 +2,7 @@
   font-family: "SF Pro Display";
   -webkit-font-feature-settings: normal;
   -moz-font-feature-settings: normal;
-  src: url("./font/SFPro/SFProDisplay-Regular.ttf");
+  src: url("font/SFPro/SFProDisplay-Regular.ttf");
 }
 
 // colors
@@ -435,10 +435,6 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
 }
 
 
-.prev .icon,
-.next .icon {
-}
-
 .slide-pointer-container {
   top: unset;
   right: 50%;
@@ -570,7 +566,7 @@ a:hover .banner-image.dark {
 .icon-interactive:hover circle,
 .icon-interactive:hover ellipse,
 .icon-interactive:hover rect,
-.icon-interactive:hover text, {
+.icon-interactive:hover text {
   fill: $accent;
   transition: $hover;
 }
@@ -700,10 +696,6 @@ a:hover .banner-image.dark {
   margin: 0;
 }
 
-.dropdown-set div:first-child {
-
-}
-
 .dropdown-set div:first-child a {
   transition: $slide;
   @include mid-text;
@@ -807,9 +799,6 @@ a:hover .banner-image.dark {
   display: none;
 }
 
-.desktop {
-
-}
 
 
 //scroll animations
@@ -902,9 +891,6 @@ header {
   z-index: 100;
 }
 
-header {
-
-}
 
 .foot-container {
   flex-direction: row;
@@ -996,10 +982,6 @@ nav {
   overflow: hidden;
 }
 
-.items-grid.light {
-
-
-}
 
 
 .items-grid.light .grid-item {
@@ -1047,8 +1029,6 @@ nav {
     width: 80%;
   }
 
-  .notification.dropdown-shown {
-  }
 
   .icon {
     height: calc($size * 4);
@@ -1068,8 +1048,6 @@ nav {
     padding: $size;
   }
 
-  .dropdown-set {
-  }
 
   .dropdown-set div:first-child a {
     text-align: center;
@@ -1081,7 +1059,7 @@ nav {
     max-width: 90%
   }
 
-  .item-slider-view, {
+  .item-slider-view {
     aspect-ratio: 3/4;
   }
 
@@ -1103,5 +1081,5 @@ nav {
     min-height: calc($size*4);
     padding: $size;
   }
-}
+} 
 

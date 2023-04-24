@@ -3,10 +3,10 @@
     <item name="undefined">
         <name>Leaves</name>
         <catalogImage>
-            img/Temp/Temporary_21_9.png
+            /img/Temp/Temporary_21_9.png
         </catalogImage>
         <shopImage>
-            img/Temp/Temporary_21_9.png
+            /img/Temp/Temporary_21_9.png
         </shopImage>
         <tagLine>
             Лес ваших фантазий
@@ -50,10 +50,10 @@
     <item name="leaves">
         <name>Leaves</name>
         <catalogImage>
-            img/Vapes/Leaves/Present/1_21_9.jpg
+            /img/Vapes/Leaves/Present/1_21_9.jpg
         </catalogImage>
         <shopImage>
-            img/Vapes/Leaves/Present/1_21_9.jpg
+            /img/Vapes/Leaves/Present/1_21_9.jpg
         </shopImage>
         <tagLine>
             Лес ваших фантазий
@@ -70,7 +70,7 @@
             Сопротивление испарителя: 0.4 Ом
         </sets>
         <secondImage>
-            img/Vapes/Leaves/Transparent/LeavesVapePresent2_21_9.png
+            /img/Vapes/Leaves/Transparent/LeavesVapePresent2_21_9.png
         </secondImage>
         <capabilities>
             <capability>
@@ -78,7 +78,7 @@
                     Лёгкий парогенератор
                 </capocaption>
                 <capoimage>
-                    img/Temp/Temporary_21_9.png
+                    /img/Temp/Temporary_21_9.png
                 </capoimage>
             </capability>
             <capability>
@@ -86,7 +86,7 @@
                     Натуральные компоненты
                 </capocaption>
                 <capoimage>
-                    img/Temp/Temporary_21_9.png
+                    /img/Temp/Temporary_21_9.png
                 </capoimage>
             </capability>
             <capability>
@@ -94,7 +94,7 @@
                     Следите за потреблением
                 </capocaption>
                 <capoimage>
-                    img/ellipse/ellipseIntegration_21_9.png
+                    /img/ellipse/ellipseIntegration_21_9.png
                 </capoimage>
             </capability>
         </capabilities>
