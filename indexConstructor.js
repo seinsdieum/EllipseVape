@@ -15,16 +15,16 @@ Club.addEventListener("mouseenter", () => {
 //dropdown
 
 const tmtBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "TMT 46", false, true)
-const tmtPair = [LinkText("catalogseries.html/tmt", "TMT"), tmtBanner]
+const tmtPair = [LinkText("catalogitem.html?item=tmtfs", "TMT"), tmtBanner]
 
-const leavesBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "Leaves I", false, true)
-const leavesPair = [LinkText("catalogseries.html/leaves", "Leaves"), leavesBanner]
+const leavesBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "Leaves", false, true)
+const leavesPair = [LinkText("catalogitem.html?item=leaves", "Leaves"), leavesBanner]
 
-const surfingemBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "SurfinGem", false, true)
-const surfingemPair = [LinkText("catalogseries.html/surfingem", "SurfinGem"), surfingemBanner]
+const surfingemBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "SurfinGem Wise", false, true)
+const surfingemPair = [LinkText("catalogitem.html?item=wise", "SurfinGem"), surfingemBanner]
 
-const kaliBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "Kali 8", false, true)
-const kaliPair = [LinkText("catalogseries.html/byteshard", "Byteshard"), kaliBanner]
+const kaliBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "Byteshard A", false, true)
+const kaliPair = [LinkText("catalogitem.html?item=bytesharda", "Byteshard"), kaliBanner]
 
 
 const goodsDropdown = new DropdownMenu([tmtPair, leavesPair, surfingemPair, kaliPair], true)
