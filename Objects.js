@@ -186,9 +186,10 @@ function FooterList(header, items) {
     return list;
 }
 
-function LinkText(link, text) {
+function LinkText(link, text, lght) {
     const href = document.createElement("a")
     if(link) href.href = link;
+    if(lght) href.style.color = dark;
     href.innerText = text;
     return href;
 }

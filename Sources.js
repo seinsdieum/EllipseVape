@@ -20,16 +20,16 @@ const NotFound = "notfound_21_9.jpg"
 //ready-to-use solution functions
 function AddDefaultMobileDropdown(dark, back) {
     //dropdown mobile
-    const closeNavigationDropdown = (LinkText("", "Закрыть"))
-    const backLink = LinkText("", "Назад")
+    const closeNavigationDropdown = (LinkText("", "Закрыть", !dark))
+    const backLink = LinkText("", "Назад", !dark)
     const navigationDropdown =
         back ? new DropdownList
     (
         [
-            LinkText("", "Ellipstore"),
-            LinkText("", "Ellipse Club"),
-            LinkText("", "Каталог"),
-            LinkText("", "Поддержка"),
+            LinkText("store.html", "Ellipstore", !dark),
+            LinkText("club.html", "Ellipse Club", !dark),
+            LinkText("catalog.html", "Каталог", !dark),
+            LinkText("support.html", "Поддержка", !dark),
             backLink,
             closeNavigationDropdown
         ],
@@ -37,10 +37,10 @@ function AddDefaultMobileDropdown(dark, back) {
     ) : new DropdownList
     (
         [
-            LinkText("", "Ellipstore"),
-            LinkText("", "Ellipse Club"),
-            LinkText("", "Каталог"),
-            LinkText("", "Поддержка"),
+            LinkText("store.html", "Ellipstore", !dark),
+            LinkText("club.html", "Ellipse Club", !dark),
+            LinkText("catalog.html", "Каталог", !dark),
+            LinkText("support.html", "Поддержка", !dark),
             closeNavigationDropdown
         ],
         dark

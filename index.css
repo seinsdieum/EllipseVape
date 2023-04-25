@@ -2,7 +2,7 @@
   font-family: "SF Pro Display";
   -webkit-font-feature-settings: normal;
   -moz-font-feature-settings: normal;
-  src: url("./font/SFPro/SFProDisplay-Regular.ttf");
+  src: url("font/SFPro/SFProDisplay-Regular.ttf");
 }
 /*
 $accent: #7eb6e0;
@@ -36,8 +36,13 @@ $accent: #7eb6e0;
   z-index: -100;
 }
 
-.banner-full-description.info h1,
-.banner-full-description.info p {
+.banner-image.light,
+.banner-image.light.back-transp {
+  background-size: cover;
+}
+
+.info h1,
+.info p {
   text-align: left;
   align-self: flex-start;
 }
@@ -379,6 +384,7 @@ $accent: #7eb6e0;
   align-content: space-around;
   padding: calc((1vw + 1vh) * 1);
   text-align: center;
+  background: black;
 }
 
 .footer-disclaimer p {
@@ -423,6 +429,61 @@ $accent: #7eb6e0;
   color: #d9d9d9;
   list-style-type: none;
   transition: 0.05s ease-in-out;
+}
+
+button {
+  width: calc(9 * (1vw + 1vh));
+  height: calc(2 * (1vw + 1vh));
+  background: linear-gradient(112.1deg, #d9d9d9 11.4%, #96c1db 70.2%);
+  color: black;
+  border-radius: calc(1vw + 1vh);
+  padding: calc(1vw + 1vh);
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: calc((1vw + 1vh) * 0.8);
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: calc((1vw + 1vh) * 0.7);
+  background-size: 400%;
+  background-position: 0 0;
+  z-index: 5;
+  justify-self: center;
+}
+
+button,
+button:hover,
+button:focus {
+  outline: unset;
+  border: unset;
+}
+
+button:hover,
+button::selection {
+  opacity: 0.7;
+}
+
+button.light {
+  background: linear-gradient(112.1deg, rgb(0, 0, 0) 11.4%, #192227 70.2%);
+  color: #d9d9d9;
+}
+
+.row.around {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.around button {
+  margin: calc(1vw + 1vh);
+}
+
+.banner-full-description button:hover {
+  background-position: 100% 100%;
+}
+
+.info input {
+  align-self: flex-start;
 }
 
 .column {
@@ -664,7 +725,7 @@ a:hover .banner-image.dark {
 }
 
 .notification {
-  justify-content: flex-start;
+  justify-content: center;
   padding: 0;
   margin: 0;
   font-weight: 500;
@@ -839,6 +900,18 @@ footer {
   z-index: 150;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
+button.fixed-sized {
+  height: 70px;
+  width: 290px;
+  font-size: 36px;
+  font-weight: 700;
+  border-radius: 50px;
+}
+
 .foot-label {
   z-index: 102;
   top: 0;
@@ -866,7 +939,7 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-blend-mode: darken;
 }
@@ -875,6 +948,15 @@ footer {
   transition-delay: 0ms;
   background-size: 100%;
   background-position: 50% 80%;
+}
+
+.grid-item h1 {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: calc((1vw + 1vh) * 0.8);
+  font-weight: 600;
+  font-size: calc((1vw + 1vh) * 1);
 }
 
 .grid-item img,
@@ -908,6 +990,14 @@ nav {
   overflow: hidden;
 }
 
+form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(1vw + 1vh);
+}
+
 .items-grid.light .grid-item {
   transition: 0.4s ease-out;
   color: #d9d9d9;
@@ -915,6 +1005,11 @@ nav {
 
 .items-grid.dark .grid-item {
   background: linear-gradient(112.1deg, #d9d9d9 11.4%, #96c1db 70.2%);
+}
+
+form input[type=text]:focus {
+  outline: unset;
+  border: unset;
 }
 
 @media (max-width: 600px) {
@@ -953,6 +1048,12 @@ nav {
     padding: calc(1vw + 1vh);
     height: calc((1vw + 1vh) * 5);
     width: 80%;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: calc((1vw + 1vh) * 0.8);
+    font-weight: 600;
+    font-size: calc((1vw + 1vh) * 2);
   }
   .icon {
     height: calc((1vw + 1vh) * 4);
@@ -986,6 +1087,14 @@ nav {
   .footer-disclaimer p {
     max-width: 90%;
   }
+  .grid-item h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: calc((1vw + 1vh) * 0.8);
+    font-weight: 600;
+    font-size: calc((1vw + 1vh) * 2);
+  }
   .item-slider-view {
     aspect-ratio: 3/4;
   }
@@ -1008,6 +1117,11 @@ nav {
     font-size: calc((1vw + 1vh) * 2);
     min-height: calc((1vw + 1vh) * 4);
     padding: calc(1vw + 1vh);
+  }
+  .info h1,
+  .info p {
+    text-align: center;
+    align-self: center;
   }
 }
 

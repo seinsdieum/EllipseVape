@@ -14,7 +14,7 @@ Club.addEventListener("mouseenter", () => {
 //dropdown
 
 //dropdown burger
-AddDefaultMobileDropdown(true)
+AddDefaultMobileDropdown(true, true)
 
 //slider
 body.prepend(header)

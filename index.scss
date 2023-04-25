@@ -173,8 +173,13 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
   z-index: -100;
 }
 
-.banner-full-description.info h1,
-.banner-full-description.info p {
+.banner-image.light,
+.banner-image.light.back-transp{
+  background-size: cover;
+}
+
+.info h1,
+.info p {
   text-align: left;
   align-self: flex-start;
 }
@@ -477,7 +482,7 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
   align-content: space-around;
   padding: calc($size * 1);
   text-align: center;
-
+  background: $dark;
 }
 
 .footer-disclaimer p {
@@ -511,7 +516,55 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
   transition: $hover;
 }
 
+button {
+  width: calc(9*$size);
+  height: calc(2 * $size);
+  background: $light-grad;
+  color: $dark;
+  border-radius: $size;
+  padding: $size;
+  @include smaller-text;
+  background-size: 400%;
+  background-position: 0 0;
+  z-index: 5;
+  justify-self: center;
+}
 
+
+button,
+button:hover,
+button:focus {
+  outline: unset;
+  border: unset;
+}
+
+button:hover,
+button::selection{
+  opacity: 0.7;
+}
+
+button.light {
+  background: $dark-grad;
+  color: $light;
+}
+
+.row.around {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.around button {
+  margin: $size;
+}
+
+.banner-full-description button:hover
+{
+  background-position: 100% 100%;
+}
+
+.info input {
+  align-self: flex-start;
+}
 
 .column {
   @include column;
@@ -741,7 +794,7 @@ a:hover .banner-image.dark {
 }
 
 .notification {
-  justify-content: flex-start;
+  justify-content: center;
   @include smaller-text;
 }
 
@@ -892,6 +945,7 @@ header {
 }
 
 
+
 .foot-container {
   flex-direction: row;
 }
@@ -914,6 +968,17 @@ footer {
   z-index: 150;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
+button.fixed-sized {
+  height: 70px;
+  width: 290px;
+  font-size: 36px;
+  font-weight: 700;
+  border-radius: 50px;
+}
 
 .foot-label {
   z-index: 102;
@@ -940,16 +1005,19 @@ footer {
   @include flex-end;
   @include flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-blend-mode: darken;
-
 }
 
 .grid-item:hover, .grid-item:focus {
   transition-delay: 0ms;
   background-size: 100%;
   background-position: 50% 80%;
+}
+
+.grid-item h1 {
+  @include mid-text;
 }
 
 .grid-item img,
@@ -982,7 +1050,12 @@ nav {
   overflow: hidden;
 }
 
-
+form {
+  @include flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $size;
+}
 
 .items-grid.light .grid-item {
   transition: $dropdown;
@@ -993,7 +1066,10 @@ nav {
   background: $light-grad;
 }
 
-
+form input[type="text"]:focus {
+  outline: unset;
+  border: unset;
+}
 
 @media (max-width: 600px) {
   .foot-container {
@@ -1027,6 +1103,7 @@ nav {
     padding: $size;
     height: calc($size*5);
     width: 80%;
+    @include big-text;
   }
 
 
@@ -1048,7 +1125,6 @@ nav {
     padding: $size;
   }
 
-
   .dropdown-set div:first-child a {
     text-align: center;
     @include big-text;
@@ -1057,6 +1133,10 @@ nav {
 
   .footer-disclaimer p {
     max-width: 90%
+  }
+
+  .grid-item h1 {
+    @include big-text;
   }
 
   .item-slider-view {
@@ -1081,5 +1161,11 @@ nav {
     min-height: calc($size*4);
     padding: $size;
   }
+  .info h1,
+  .info p {
+    text-align: center;
+    align-self: center;
+  }
+
 } 
 

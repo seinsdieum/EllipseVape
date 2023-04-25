@@ -46,6 +46,12 @@
                 </capoimage>
             </capability>
         </capabilities>
+        <cost>
+            undef
+        </cost>
+        <sidePhoto>
+            img/Temp/Temporary_21_9.png
+        </sidePhoto>
     </item>
     <item name="leaves">
         <name>Leaves</name>
@@ -98,5 +104,11 @@
                 </capoimage>
             </capability>
         </capabilities>
+        <cost>
+            79.99
+        </cost>
+        <sidePhoto>
+            img/Temp/Temporary_21_9.png
+        </sidePhoto>
     </item>
 </items>

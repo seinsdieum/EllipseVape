@@ -1,6 +1,5 @@
 //notifications
-body.appendChild(ClubInviter.msg)
-body.appendChild(NotFoundDark.msg)
+body.appendChild(NotFoundLight.msg)
 
 //header
 const header = document.querySelector("header")
@@ -13,7 +12,7 @@ const More = document.querySelector("a[id='mobileIcon']")
 //dropdown
 
 //dropdown burger
-AddDefaultMobileDropdown(true)
+AddDefaultMobileDropdown(false, true)
 
 //slider
 
