@@ -9,7 +9,7 @@ const allSideObserver = new IntersectionObserver((entries) => {
     })
 })
 
-
+let observed = false
 
 
 const oneSideObserver = new IntersectionObserver((entries) => {
@@ -21,8 +21,12 @@ const oneSideObserver = new IntersectionObserver((entries) => {
         else entry.target.classList.remove(".scroll-shown")
     })
 })
+const scrollHiddenElems = document.querySelectorAll(".scroll-hidden")
+if(window.innerWidth >= mobileWidth) {
+    window.addEventListener("load", () => {
 
-window.addEventListener("load", () => {
-    const scrollHiddenElems = document.querySelectorAll(".scroll-hidden")
-    scrollHiddenElems.forEach((el) => allSideObserver.observe(el))
-})
+        scrollHiddenElems.forEach((el) => allSideObserver.observe(el))
+    })
+} else {
+    scrollHiddenElems.forEach((el) => el.classList.remove("scroll-hidden"))
+}

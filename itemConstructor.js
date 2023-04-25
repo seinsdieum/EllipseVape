@@ -40,9 +40,13 @@ function setDevice(xml) {
         const caps = element.querySelectorAll("capability")
         for(let i of caps) {
             let b = Banner(false, i.querySelector("capoimage").innerHTML, i.querySelector("capocaption").innerHTML, true, true)
+            if(window.innerWidth > mobileWidth) {
+                b.classList.add("scroll-hidden")
+                allSideObserver.observe(b)
+            }
+
             b.classList.add("back-transp")
-            b.classList.add("scroll-hidden")
-            capsContainer.appendChild(b)
+            body.insertBefore(b, capsContainer)
         }
     }
     else {

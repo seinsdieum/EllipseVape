@@ -1,5 +1,5 @@
 //folders
-
+const mobileWidth = 420
 const iconPath = "img/icons/"
 const vapePath = "img/Vapes/"
 const ellipsePath = "img/ellipse/"

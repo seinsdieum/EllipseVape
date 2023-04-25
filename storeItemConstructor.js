@@ -69,7 +69,7 @@ function CustomerForm() {
         for(let i of this.name.value) {
             if(i === ' ') c++
         }
-        if (c < 2) complete = false;
+        if (c < 1) complete = false;
         for(let i in this.phone.value) {
             if(!(i === '+' || (i >= '0' && i <= '9') || i === '(' || i === ')' || i === ' ')) {
                 complete = false;
