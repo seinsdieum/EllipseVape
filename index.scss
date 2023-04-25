@@ -1072,6 +1072,11 @@ form input[type="text"]:focus {
 }
 
 @media (max-width: 600px) {
+
+  body {
+    -webkit-font-feature-settings: normal;
+    -webkit-text-size-adjust: 100%;
+  }
   .foot-container {
     display: block;
   }
