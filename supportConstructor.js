@@ -86,6 +86,7 @@ function CustomerForm() {
             this.name.value = ""
             this.email.value = ""
             this.description.value = ""
+            this.form.remove()
         }
         else InvalidDataDark.Show()
     })

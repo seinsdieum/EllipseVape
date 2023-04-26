@@ -81,6 +81,7 @@ function CustomerForm() {
             this.name.value = ""
             this.phone.value = ""
             this.town.value = ""
+            this.form.remove()
         }
         else InvalidDataLight.Show()
     })
@@ -109,12 +110,12 @@ function setDevice(xml) {
         deviceSets.querySelector("h1").innerText = "Характеристики"
         deviceSets.querySelector("p").innerText = element.children[5].innerHTML
         deviceCost.innerHTML = `${element.querySelector("cost").innerHTML} BYN`
-        deviceSets.style.backgroundImage = `url(${element.querySelector("sidePhoto").innerHTML})`
 
         const formm = new CustomerForm()
         deviceForm.addEventListener("mousedown", () => {
             body.append(formm.form)
             window.scrollTo({top: 10000, behavior: "smooth"})
+            deviceForm.remove()
         })
         deviceCatalog.addEventListener("mousedown", () => {
             window.location.href = `catalogitem.html?item=${deviceParam}`
@@ -132,6 +133,4 @@ AddDefaultMobileDropdown(false, true)
 //slider
 
 body.prepend(header)
-if(window.innerWidth < 500) {
 
-}

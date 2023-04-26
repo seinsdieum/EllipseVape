@@ -248,7 +248,8 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
 
 .light.back-transp h1,
 .light.back-transp p{
-  text-shadow: unset;
+  text-outline: 3px $light;
+  text-shadow: #e0e0e0 1px 1px 0;
 }
 
 .light-grad {
@@ -257,7 +258,12 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
 
 .back-transp h1,
 .back-transp p{
-  text-shadow: 0 0 $size $dark ;
+  text-outline: 3px $dark;
+  /*
+  text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.63);
+  */
+  text-shadow: #2a2a2a 1px 1px 0;
+
 }
 
 @mixin absolute-covered {
@@ -827,7 +833,6 @@ a:hover .banner-image.dark {
   @include mid-text;
 }
 
-
 .mobile-aspect-ratio {
   @include mobile-set;
 }
@@ -875,6 +880,14 @@ nav.scroll-hidden {
   z-index: -1;
 }
 
+.scroll-hidden .banner-image.non-fade {
+  transform: unset;
+  opacity: 1;
+  filter: unset;
+  transition: $slide;
+  z-index: -1;
+}
+
 .scroll-hidden .banner-description {
   transform: translateX(-25%) ;
   opacity: 0;
@@ -917,6 +930,10 @@ nav.scroll-hidden {
   transition-delay: 600ms;
 }
 
+.banner-image.side
+{
+  background-attachment: fixed;
+}
 
 
 .scroll-shown .banner-description,
@@ -943,8 +960,6 @@ header {
   top: 0;
   z-index: 100;
 }
-
-
 
 .foot-container {
   flex-direction: row;
@@ -1106,8 +1121,9 @@ form input[type="text"]:focus {
 
   .notification {
     padding: $size;
-    height: calc($size*5);
+    min-height: calc($size*5);
     width: 80%;
+    max-height: calc($size*100);
     @include big-text;
   }
 
@@ -1170,6 +1186,39 @@ form input[type="text"]:focus {
   .info p {
     text-align: center;
     align-self: center;
+  }
+
+  .banner-image,
+  .banner-image .banner-description-center,
+  .banner-image .banner-description,
+  .banner-image .banner-full-description, {
+    background: no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    @include mobile-set;
+  }
+
+  .banner-image.back-transp.light {
+    background: rgba(0,0,0,0) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    @include mobile-set;
+  }
+
+  .banner-image.side:has(.banner-full-description) {
+    background: rgba(0,0,0,0);
+  }
+
+  .banner-full-description p {
+    font-size: calc($size * 1.8);
+  }
+
+  .banner-description h1 {
+    padding: $size;
   }
 
 } 

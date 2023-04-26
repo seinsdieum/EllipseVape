@@ -33,10 +33,9 @@ function setDevice(xml) {
         deviceDescription.querySelector("h1").innerText = element.children[3].innerHTML
         deviceDescription.querySelector("p").innerText = element.children[4].innerHTML
         deviceStore.href = `storeitem.html?item=${deviceParam}`
-        deviceStore.querySelector(".banner-image").style.backgroundImage = `url(${element.children[6].innerHTML})`
+        /*deviceStore.querySelector(".banner-image").style.backgroundImage = `url(${element.children[6].innerHTML})`*/
         deviceSets.querySelector("h1").innerText = "Характеристики"
         deviceSets.querySelector("p").innerText = element.children[5].innerHTML
-        deviceSets.style.backgroundImage = `url(${element.querySelector("sidePhoto").innerHTML})`
         const caps = element.querySelectorAll("capability")
         for(let i of caps) {
             let b = Banner(false, i.querySelector("capoimage").innerHTML, i.querySelector("capocaption").innerHTML, true, true)
@@ -54,19 +53,9 @@ function setDevice(xml) {
     }
 }
 loadXMLDoc("items.xml", setDevice)
-
-
-
-
-
 //dropdown burger
 AddDefaultMobileDropdown(true, true)
 
 //slider
 
-
-
 body.prepend(header)
-if(window.innerWidth < 500) {
-
-}

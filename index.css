@@ -113,7 +113,8 @@ $accent: #7eb6e0;
 
 .light.back-transp h1,
 .light.back-transp p {
-  text-shadow: unset;
+  text-outline: 3px #d9d9d9;
+  text-shadow: #e0e0e0 1px 1px 0;
 }
 
 .light-grad {
@@ -122,7 +123,11 @@ $accent: #7eb6e0;
 
 .back-transp h1,
 .back-transp p {
-  text-shadow: 0 0 calc(1vw + 1vh) black;
+  text-outline: 3px black;
+  /*
+  text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.63);
+  */
+  text-shadow: #2a2a2a 1px 1px 0;
 }
 
 .banner-description {
@@ -812,6 +817,14 @@ nav.scroll-hidden {
   z-index: -1;
 }
 
+.scroll-hidden .banner-image.non-fade {
+  transform: unset;
+  opacity: 1;
+  filter: unset;
+  transition: 0.8s ease-in-out;
+  z-index: -1;
+}
+
 .scroll-hidden .banner-description {
   transform: translateX(-25%);
   opacity: 0;
@@ -852,6 +865,10 @@ nav.scroll-hidden {
   opacity: 1;
   filter: unset;
   transition-delay: 600ms;
+}
+
+.banner-image.side {
+  background-attachment: fixed;
 }
 
 .scroll-shown .banner-description,
@@ -1050,8 +1067,9 @@ form input[type=text]:focus {
   }
   .notification {
     padding: calc(1vw + 1vh);
-    height: calc((1vw + 1vh) * 5);
+    min-height: calc((1vw + 1vh) * 5);
     width: 80%;
+    max-height: calc((1vw + 1vh) * 100);
     padding: 0;
     margin: 0;
     font-weight: 500;
@@ -1126,6 +1144,46 @@ form input[type=text]:focus {
   .info p {
     text-align: center;
     align-self: center;
+  }
+  .banner-image,
+  .banner-image .banner-description-center,
+  .banner-image .banner-description,
+  .banner-image .banner-full-description {
+    background: no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    aspect-ratio: 9/12;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: calc((1vw + 1vh) * 0.8);
+    font-weight: 600;
+    font-size: calc((1vw + 1vh) * 1);
+  }
+  .banner-image.back-transp.light {
+    background: rgba(0, 0, 0, 0) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    aspect-ratio: 9/12;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: calc((1vw + 1vh) * 0.8);
+    font-weight: 600;
+    font-size: calc((1vw + 1vh) * 1);
+  }
+  .banner-image.side:has(.banner-full-description) {
+    background: rgba(0, 0, 0, 0);
+  }
+  .banner-full-description p {
+    font-size: calc((1vw + 1vh) * 1.8);
+  }
+  .banner-description h1 {
+    padding: calc(1vw + 1vh);
   }
 }
 

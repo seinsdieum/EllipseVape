@@ -46,17 +46,8 @@ function SwitchToDesktop() {
     }
 }
 
-window.addEventListener("load", () => {
-    if( window.innerWidth < mobileWidth ) {
+function handleResize() {
+    if(window.innerWidth < 500) {
         SwitchToMobile()
     }
-    if( window.innerWidth >= mobileWidth) {
-        SwitchToDesktop()
-    }
-})
-
-if( window.innerWidth < mobileWidth ) {
-    SwitchToMobile()
-} else {
-    SwitchToDesktop()
 }

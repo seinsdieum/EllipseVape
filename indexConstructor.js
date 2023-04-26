@@ -1,6 +1,6 @@
 //notifications
 body.appendChild(ClubInviter.msg)
-
+body.appendChild(AdultAlertDark.msg)
 //header
 const header = document.querySelector("header")
 
@@ -44,18 +44,19 @@ AddDefaultMobileDropdown(true)
 
 //slider
 
-const slideBanner1 = Banner("catalogitem.html/tmt", "img/Temp/TemporaryFull_21_9.png",
+const slideBanner1 = Banner("catalogitem.html?item=tmtfs", "img/Vapes/TMT/46/Present/fspresent.jpg",
     "TMT 46. Релиз в июне.", false, true)
-const slideBanner2 = Banner("catalogseries.html/leaves", vapePath + "Leaves/Present/1_21_9.jpg",
+const slideBanner2 = Banner("catalogitem.html?item=leaves", vapePath + "Leaves/Present/1_21_9.jpg",
     "Leaves. Лес ваших фантазий.", false, true)
 const slideBanner3 = InformationBanner(ellipsePath + "weDo_21_9.jpg", "Что мы производим?" ,
     "Мы производим вейп-устройства, которые дарят удовольствие каждому желающему. " +
     "Наши компоненты производятся в Тайване, и благодаря этому устройства будут служить вам большой срок. " +
     "Всё, что мы делаем - исключительно ради вас.", true)
 
+
 const tempSl = document.querySelector(".slider-view")
 const slider = new Slider([slideBanner1, slideBanner2, slideBanner3], true)
-
 tempSl.replaceWith(slider)
 
 body.prepend(header)
+AdultAlertDark.Show()

@@ -57,3 +57,4 @@ textSearch.addEventListener("change", () => {
 
 
 body.prepend(header)
+handleResize()

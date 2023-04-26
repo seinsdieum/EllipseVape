@@ -96,6 +96,7 @@ function CustomerForm() {
             this.phone.value = ""
             this.email.value = ""
             this.town.value = ""
+            this.form.remove()
         }
         else InvalidDataDark.Show()
     })
