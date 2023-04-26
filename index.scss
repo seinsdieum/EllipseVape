@@ -1200,17 +1200,14 @@ form input[type="text"]:focus {
     @include mobile-set;
   }
 
-  .banner-image.back-transp.light {
+  .banner-image.back-transp.light,
+  .banner-image.back-transp.side{
     background: rgba(0,0,0,0) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     @include mobile-set;
-  }
-
-  .side {
-    background-attachment: unset;
   }
 
   .banner-full-description p {
