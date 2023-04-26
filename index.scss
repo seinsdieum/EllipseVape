@@ -1210,10 +1210,7 @@ form input[type="text"]:focus {
   }
 
   .side {
-    background-attachment: scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background-attachment: unset;
   }
 
   .banner-full-description p {
