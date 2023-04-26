@@ -1176,8 +1176,11 @@ form input[type=text]:focus {
     font-weight: 600;
     font-size: calc((1vw + 1vh) * 1);
   }
-  .banner-image.side:has(.banner-full-description) {
-    background: rgba(0, 0, 0, 0);
+  .side {
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
   }
   .banner-full-description p {
     font-size: calc((1vw + 1vh) * 1.8);

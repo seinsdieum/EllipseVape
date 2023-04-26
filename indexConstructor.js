@@ -14,7 +14,7 @@ Club.addEventListener("mouseenter", () => {
 
 //dropdown
 
-const tmtBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "TMT 46", false, true)
+const tmtBanner = Banner("", vapePath + "TMT/46/Transparent/fstransparent.png", "TMT 46", false, true)
 const tmtPair = [LinkText("catalogitem.html?item=tmtfs", "TMT"), tmtBanner]
 
 const leavesBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "Leaves", false, true)

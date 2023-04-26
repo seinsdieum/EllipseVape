@@ -1209,8 +1209,11 @@ form input[type="text"]:focus {
     @include mobile-set;
   }
 
-  .banner-image.side:has(.banner-full-description) {
-    background: rgba(0,0,0,0);
+  .side {
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
   }
 
   .banner-full-description p {
