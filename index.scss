@@ -579,9 +579,14 @@ button.light {
 body {
   margin: 0;
   padding: 0;
-  background: black;
+  background-color: $dark;
   max-width: 100%;
   background: $dark-grad;
+}
+
+body.light-grad {
+  background-color: $light;
+  background: $light-grad;
 }
 
 
