@@ -123,9 +123,7 @@
             Создай волну
         </tagLine>
         <description>
-            Самый навороченный на рынке. Технология VapeTouch со встроенным Taptic Engine 5 подарит вам
-            невероятный опыт использования и массу положительных впечатлений, а технология TransMediate позволит вам ощутить всю палитру вкусов.
-            Внимание: на данный момент предоставляется предзаказ устройства. Купить устройство сразу можно будет 16 июня.
+            Самый навороченный на рынке. Технология VapeTouch со встроенным Taptic Engine 5 подарит вам невероятный опыт использования и массу положительных впечатлений, а технология TransMediate позволит вам ощутить всю палитру вкусов. Внимание: на данный момент предоставляется предзаказ устройства. Купить устройство сразу можно будет 16 июня.
         </description>
         <sets>
             Размер: высота – 136.9 мм, ширина – 92.4 мм, толщина – 13.4 мм
@@ -144,7 +142,7 @@
                     Инновационная структура
                 </capocaption>
                 <capoimage>
-                    img/Temp/Temporary_21_9.png
+                    img/Vapes/TMT/46/Capabilities/fscapSection1.png
                 </capoimage>
             </capability>
             <capability>
@@ -152,7 +150,8 @@
                     Эргономичный дизайн
                 </capocaption>
                 <capoimage>
-                    img/Temp/Temporary_21_9.png
+                    img/Vapes/TMT/46/Capabilities/fscapSection2.png
+
                 </capoimage>
             </capability>
             <capability>
@@ -160,7 +159,7 @@
                     Непокоримая мощность
                 </capocaption>
                 <capoimage>
-                    img/ellipse/ellipseIntegration_21_9.png
+                    img/Vapes/TMT/46/Capabilities/fscapSection3.png
                 </capoimage>
             </capability>
         </capabilities>
