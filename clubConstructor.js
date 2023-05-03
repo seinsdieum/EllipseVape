@@ -91,12 +91,27 @@ function CustomerForm() {
             && this.phone.value.length > 0
             && this.name.value.length > 0
             && this.email.value.length > 0) {
+            const thanks = document.createElement("h1")
+            const thanks2 = document.createElement("p")
+            thanks.style.color = "#d9d9d9"
+            thanks2.style.color = "#d9d9d9"
+            thanks.innerText = `Спасибо, ${this.name.value}.`
+            thanks2.innerText = `Мы отправим вам инвайт код на ${this.email.value}`
+            this.form.appendChild(thanks)
+            this.form.appendChild(thanks2)
             FormSubmitDark.Show()
             this.name.value = ""
             this.phone.value = ""
             this.email.value = ""
             this.town.value = ""
-            this.form.remove()
+
+            this.name.remove()
+            this.phone.remove()
+            this.email.remove()
+            this.town.remove()
+            this.realButton.remove()
+            pls.remove()
+            pls2.remove()
         }
         else InvalidDataDark.Show()
     })

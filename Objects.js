@@ -16,7 +16,7 @@ const body = document.querySelector("body")
 function Line(dark, noPad) {
     const line = document.createElement("div")
     line.style.height = "2px"
-    line.style.width = "90%"
+    line.style.width = "75%"
     line.style.margin = "0 auto"
     if (!noPad) {
         line.style.marginTop = "2%"

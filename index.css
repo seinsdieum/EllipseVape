@@ -499,18 +499,12 @@ button.light {
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background: black;
   max-width: 100%;
-  background: linear-gradient(112.1deg, rgb(0, 0, 0) 11.4%, #192227 70.2%);
-}
-
-body.light-grad {
-  background-color: #d9d9d9;
-  background: linear-gradient(112.1deg, #d9d9d9 11.4%, #96c1db 70.2%);
 }
 
 body.light {
-  background: linear-gradient(112.1deg, #d9d9d9 11.4%, #96c1db 70.2%);
+  background: #d9d9d9;
 }
 
 .dark {
@@ -1071,9 +1065,8 @@ form input[type=text]:focus {
     padding-bottom: calc((1vw + 1vh) * 1);
   }
   .notification {
-    padding: calc(1vw + 1vh);
-    min-height: calc((1vw + 1vh) * 5);
-    width: 80%;
+    height: calc((1vw + 1vh) * 6);
+    width: 90%;
     max-height: calc((1vw + 1vh) * 100);
     padding: 0;
     margin: 0;

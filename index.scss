@@ -42,7 +42,6 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont,'SF Pro Display', system-ui, "Roboto Light", serif;
   
-
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -579,20 +578,14 @@ button.light {
 body {
   margin: 0;
   padding: 0;
-  background-color: $dark;
+  background: black;
   max-width: 100%;
-  background: $dark-grad;
-}
-
-body.light-grad {
-  background-color: $light;
-  background: $light-grad;
 }
 
 
 
 body.light {
-  background: $light-grad;
+  background: #d9d9d9;
 }
 
 .dark {
@@ -1125,9 +1118,8 @@ form input[type="text"]:focus {
   }
 
   .notification {
-    padding: $size;
-    min-height: calc($size*5);
-    width: 80%;
+    height: calc($size*6);
+    width: 90%;
     max-height: calc($size*100);
     @include big-text;
   }

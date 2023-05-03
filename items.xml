@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE items [
+        <!ELEMENT items (item)*>
+        <!ELEMENT item (name|catalogImage|shopImage|tagLine|description|sets|secondImage|capabilities|cost|sidePhoto)*>
+        <!ATTLIST item
+                name CDATA #REQUIRED>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT catalogImage (#PCDATA)>
+        <!ELEMENT shopImage (#PCDATA)>
+        <!ELEMENT tagLine (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT sets (#PCDATA)>
+        <!ELEMENT secondImage (#PCDATA)>
+        <!ELEMENT capabilities (capability)*>
+        <!ELEMENT capability (capocaption|capoimage)*>
+        <!ELEMENT capocaption (#PCDATA)>
+        <!ELEMENT capoimage (#PCDATA)>
+        <!ELEMENT cost (#PCDATA)>
+        <!ELEMENT sidePhoto (#PCDATA)>
+        ]>
 <items>
     <item name="undefined">
         <name>Leaves</name>
