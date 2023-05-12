@@ -20,14 +20,8 @@ const tmtPair = [LinkText("catalogitem.html?item=tmtfs", "TMT"), tmtBanner]
 const leavesBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "Leaves", false, true)
 const leavesPair = [LinkText("catalogitem.html?item=leaves", "Leaves"), leavesBanner]
 
-const surfingemBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "SurfinGem Wise", false, true)
-const surfingemPair = [LinkText("catalogitem.html?item=wise", "SurfinGem"), surfingemBanner]
 
-const kaliBanner = Banner("", vapePath + "Leaves/Transparent/LeavesVapePresent21_9.png", "Byteshard A", false, true)
-const kaliPair = [LinkText("catalogitem.html?item=bytesharda", "Byteshard"), kaliBanner]
-
-
-const goodsDropdown = new DropdownMenu([tmtPair, leavesPair, surfingemPair, kaliPair], true)
+const goodsDropdown = new DropdownMenu([tmtPair, leavesPair], true)
 Goods.addEventListener("mouseenter", () => {
     const height = header.getBoundingClientRect().top
     if(height === 0){
