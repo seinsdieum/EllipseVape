@@ -104,9 +104,7 @@ function setDevice(xml) {
     if(element) {
         document.title = `${element.children[0].innerHTML} - Ellipstore`
         devicePresent.querySelector("h1").innerText = element.children[0].innerHTML
-        devicePresent.style.backgroundImage = `url(${element.children[1].innerHTML})`
-        deviceDescription.querySelector("h1").innerText = element.children[3].innerHTML
-        deviceDescription.style.backgroundImage = `url(${element.children[6].innerHTML})`
+        devicePresent.style.backgroundImage = `url(${element.children[6].innerHTML})`
         deviceSets.querySelector("h1").innerText = "Характеристики"
         deviceSets.querySelector("p").innerText = element.children[5].innerHTML
         deviceCost.innerHTML = `${element.querySelector("cost").innerHTML} BYN`
@@ -130,7 +128,10 @@ loadXMLDoc("items.xml", setDevice)
 //dropdown burger
 AddDefaultMobileDropdown(false, true)
 
+
 //slider
 
 body.prepend(header)
+
+
 

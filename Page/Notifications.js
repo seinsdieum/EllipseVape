@@ -1,5 +1,5 @@
-const InvalidDataDark = new Notification(false,"Неверный ввод", true)
-const InvalidDataLight = new Notification(false,"Неверный ввод", false)
+const InvalidDataDark = new Notification(false,"Некорректный ввод", true)
+const InvalidDataLight = new Notification(false,"Некорректный ввод", false)
 
 let ClubInviter = new Notification(false,"Ellipse Club - Платформа для пользователей устройствами Ellipse", true)
 
@@ -9,4 +9,4 @@ const FormSubmitLight = new Notification(false,"Ваша заявка отпра
 const NotFoundDark = new Notification(false, "Товаров не найдено", true)
 const NotFoundLight = new Notification(false, "Товаров не найдено", false)
 
-const AdultAlertDark = new Notification(false, "Внимание: если вам меньше 18 лет, покиньте этот сайт", true)
+const AdultAlertDark = new Notification(false, "Сайт только для лиц 18+", true)

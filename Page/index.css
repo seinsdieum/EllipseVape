@@ -22,7 +22,7 @@ $accent: #7eb6e0;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 0.8);
   font-weight: 600;
-  font-size: calc((1vw + 1vh) * 1);
+  font-size: calc(1vw + 1vh);
 }
 
 .banner-image {
@@ -43,8 +43,8 @@ $accent: #7eb6e0;
 
 .info h1,
 .info p {
-  text-align: left;
   align-self: flex-start;
+  text-align: justify;
 }
 
 .banner-image::after {
@@ -73,7 +73,7 @@ $accent: #7eb6e0;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 0.8);
   font-weight: 600;
-  font-size: calc((1vw + 1vh) * 1);
+  font-size: calc(1vw + 1vh);
   justify-content: flex-start;
   align-items: center;
   justify-self: center;
@@ -111,12 +111,6 @@ $accent: #7eb6e0;
   background: rgba(0, 0, 0, 0);
 }
 
-.light.back-transp h1,
-.light.back-transp p {
-  text-outline: 3px #d9d9d9;
-  text-shadow: #e0e0e0 1px 1px 0;
-}
-
 .light-grad {
   background: linear-gradient(112.1deg, #d9d9d9 11.4%, #96c1db 70.2%);
 }
@@ -124,9 +118,6 @@ $accent: #7eb6e0;
 .back-transp h1,
 .back-transp p {
   text-outline: 3px black;
-  /*
-  text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.63);
-  */
   text-shadow: #2a2a2a 1px 1px 0;
 }
 
@@ -155,7 +146,7 @@ $accent: #7eb6e0;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 0.8);
   font-weight: 600;
-  font-size: calc((1vw + 1vh) * 1);
+  font-size: calc(1vw + 1vh);
   aspect-ratio: 21/9;
   display: flex;
   padding: 30px;
@@ -177,7 +168,7 @@ $accent: #7eb6e0;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 0.8);
   font-weight: 600;
-  font-size: calc((1vw + 1vh) * 1);
+  font-size: calc(1vw + 1vh);
   aspect-ratio: 21/9;
   display: flex;
   padding: 30px;
@@ -333,6 +324,20 @@ $accent: #7eb6e0;
   min-width: 100%;
 }
 
+.present {
+  align-items: center;
+}
+
+.present h1 {
+  font-size: calc((1vw + 1vh) * 2.8);
+  text-outline: 5px black;
+  text-shadow: #2a2a2a 1px 1px 0;
+}
+
+.bottom-shadowed {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px -50px 48px -18px inset;
+}
+
 .slider-view:hover .prev,
 .slider-view:hover .next {
   opacity: 1;
@@ -403,7 +408,7 @@ $accent: #7eb6e0;
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 0.8);
   font-weight: 600;
-  font-size: calc((1vw + 1vh) * 1);
+  font-size: calc(1vw + 1vh);
   text-transform: uppercase;
   font-weight: 500;
   padding-bottom: calc((1vw + 1vh) * 1);
@@ -642,14 +647,16 @@ a:hover .banner-image.dark {
 }
 .dropdown-set.dark {
   color: #d9d9d9;
-  background: linear-gradient(112.1deg, rgb(0, 0, 0) 11.4%, #192227 70.2%);
+  background: linear-gradient(112.1deg, rgba(0, 0, 0, 0.6) 11.4%, rgba(25, 34, 39, 0.6) 70.2%);
+  backdrop-filter: blur(calc((1vw + 1vh) * 0.5));
   background-size: 400% 400%;
   animation: 10.6s background-animation linear infinite;
 }
 
 .dropdown-set.light {
   color: black;
-  background: linear-gradient(112.1deg, #d9d9d9 11.4%, #96c1db 70.2%);
+  background: linear-gradient(112.1deg, rgba(217, 217, 217, 0.6) 11.4%, rgba(150, 193, 219, 0.6) 70.2%);
+  backdrop-filter: blur(calc((1vw + 1vh) * 0.5));
   background-size: 400% 400%;
   animation: 10.6s background-animation linear infinite;
 }
@@ -686,7 +693,7 @@ a:hover .banner-image.dark {
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 0.8);
   font-weight: 600;
-  font-size: calc((1vw + 1vh) * 1);
+  font-size: calc(1vw + 1vh);
   padding: calc((1vw + 1vh) * 0.4);
 }
 
@@ -770,7 +777,7 @@ a:hover .banner-image.dark {
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 0.8);
   font-weight: 600;
-  font-size: calc((1vw + 1vh) * 1);
+  font-size: calc(1vw + 1vh);
 }
 
 .mobile-aspect-ratio .banner-description,
@@ -782,7 +789,7 @@ a:hover .banner-image.dark {
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 0.8);
   font-weight: 600;
-  font-size: calc((1vw + 1vh) * 1);
+  font-size: calc(1vw + 1vh);
 }
 
 .mobile-aspect-ratio .banner-full-description p {
@@ -972,7 +979,7 @@ button.fixed-sized {
   font-weight: 500;
   font-size: calc((1vw + 1vh) * 0.8);
   font-weight: 600;
-  font-size: calc((1vw + 1vh) * 1);
+  font-size: calc(1vw + 1vh);
 }
 
 .grid-item img,
@@ -1140,7 +1147,6 @@ form input[type=text]:focus {
   }
   .info h1,
   .info p {
-    text-align: center;
     align-self: center;
   }
   .banner-image,
@@ -1158,11 +1164,11 @@ form input[type=text]:focus {
     font-weight: 500;
     font-size: calc((1vw + 1vh) * 0.8);
     font-weight: 600;
-    font-size: calc((1vw + 1vh) * 1);
+    font-size: calc(1vw + 1vh);
   }
   .banner-image.back-transp.light,
   .banner-image.back-transp.side {
-    background: rgba(0, 0, 0, 0) no-repeat center center;
+    background: rgba(0, 0, 0, 0) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1173,13 +1179,21 @@ form input[type=text]:focus {
     font-weight: 500;
     font-size: calc((1vw + 1vh) * 0.8);
     font-weight: 600;
-    font-size: calc((1vw + 1vh) * 1);
+    font-size: calc(1vw + 1vh);
   }
   .banner-full-description p {
     font-size: calc((1vw + 1vh) * 1.8);
   }
   .banner-description h1 {
     padding: calc(1vw + 1vh);
+  }
+  .present {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .present h1 {
+    color: #d9d9d9;
+    font-size: calc((1vw + 1vh) * 2.8);
   }
 }
 

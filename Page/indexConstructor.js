@@ -39,9 +39,9 @@ AddDefaultMobileDropdown(true)
 //slider
 
 const slideBanner1 = Banner("catalogitem.html?item=tmtfs", "img/Vapes/TMT/46/Present/fspresent.jpg",
-    "TMT 46. Релиз в июне.", false, true)
+    "TMT 46 – Релиз в июне", false, true)
 const slideBanner2 = Banner("catalogitem.html?item=leaves", vapePath + "Leaves/Present/1_21_9.jpg",
-    "Leaves. Лес ваших фантазий.", false, true)
+    "Leaves – Лес ваших фантазий", false, true)
 const slideBanner3 = InformationBanner(ellipsePath + "weDo_21_9.jpg", "Что мы производим?" ,
     "Мы производим вейп-устройства, которые дарят удовольствие каждому желающему. " +
     "Наши компоненты производятся в Тайване, и благодаря этому устройства будут служить вам большой срок. " +

@@ -8,6 +8,7 @@
 // colors
 $dark: black;
 $dark-grad: linear-gradient(112.1deg, rgb(0, 0, 0) 11.4%, #192227 70.2%);
+$dark-grad-opacity: linear-gradient(112.1deg, rgba(0, 0, 0, 0.6) 11.4%, rgba(25, 34, 39, 0.6) 70.2%);
 $dark-grad2: linear-gradient(112.1deg, rgb(20, 26, 29) 11.4%, #272d34 70.2%);
 /*
 $accent: #7eb6e0;
@@ -18,6 +19,7 @@ $higher: #484848;
 $lighter: #686868;
 $light: #d9d9d9;
 $light-grad: linear-gradient(112.1deg, #d9d9d9 11.4%, #96c1db 70.2%);
+$light-grad-opacity: linear-gradient(112.1deg, rgba(217, 217, 217, 0.6) 11.4%, rgba(150, 193, 219, 0.6) 70.2%);
 
 $font: "SF Pro Display";
 
@@ -25,7 +27,7 @@ $size: calc(1vw + 1vh);
 $smallsize: calc($size * 0.5);
 $smallersize: calc($size * 0.7);
 $defsize: calc($size * 0.8);
-$midsize: calc($size * 1.0);
+$midsize: $size;
 $bigsize: calc($size * 2);
 $largesize: calc($size * 2.8);
 
@@ -179,8 +181,8 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
 
 .info h1,
 .info p {
-  text-align: left;
   align-self: flex-start;
+  text-align: justify;
 }
 
 .banner-image::after {
@@ -247,8 +249,7 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
 
 .light.back-transp h1,
 .light.back-transp p{
-  text-outline: 3px $light;
-  text-shadow: #e0e0e0 1px 1px 0;
+
 }
 
 .light-grad {
@@ -258,9 +259,7 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
 .back-transp h1,
 .back-transp p{
   text-outline: 3px $dark;
-  /*
-  text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.63);
-  */
+
   text-shadow: #2a2a2a 1px 1px 0;
 
 }
@@ -437,6 +436,20 @@ $background-side: 30.6s background-side-side ease-in-out infinite;
 .banner-image .banner-description {
   min-height: 100%;
   min-width: 100%;
+}
+
+.present {
+  align-items: center;
+}
+.present h1 {
+  font-size: $largesize;
+  text-outline: 5px $dark;
+
+  text-shadow: #2a2a2a 1px 1px 0;
+}
+
+.bottom-shadowed {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px -50px 48px -18px inset;
 }
 
 .slider-view:hover .prev,
@@ -715,14 +728,16 @@ a:hover .banner-image.dark {
 
 .dropdown-set.dark {
   color: $light;
-  background: $dark-grad;
+  background: $dark-grad-opacity;
+  backdrop-filter: blur($smallsize);
   background-size: 400% 400%;
   animation: $background-animation;
 }
 
 .dropdown-set.light {
   color: $dark;
-  background: $light-grad;
+  background: $light-grad-opacity;
+  backdrop-filter: blur($smallsize);
   background-size: 400% 400%;
   animation: $background-animation;
 }
@@ -1004,6 +1019,8 @@ button.fixed-sized {
   z-index: 101;
 }
 
+
+
 .grid-item {
   width: calc(300px);
   height: calc(300px);
@@ -1181,7 +1198,6 @@ form input[type="text"]:focus {
   }
   .info h1,
   .info p {
-    text-align: center;
     align-self: center;
   }
 
@@ -1199,7 +1215,7 @@ form input[type="text"]:focus {
 
   .banner-image.back-transp.light,
   .banner-image.back-transp.side{
-    background: rgba(0,0,0,0) no-repeat center center;
+    background: rgba(0,0,0,0) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1213,6 +1229,15 @@ form input[type="text"]:focus {
 
   .banner-description h1 {
     padding: $size;
+  }
+
+  .present {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .present h1 {
+    color: $light;
+    font-size: $largesize;
   }
 
 } 

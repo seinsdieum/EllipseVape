@@ -48,7 +48,7 @@ function showNecessaryGridElements(search) {
     }
 }
 
-textSearch.addEventListener("change", () => {
+textSearch.addEventListener("input", () => {
     hideGridElements()
     showNecessaryGridElements(textSearch.value)
 })
