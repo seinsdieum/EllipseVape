@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<items>
+    <item name="leaves">
+        <name>Leaves</name>
+        <catalogImage>
+            img/Vapes/Leaves/Present/1_21_9.jpg
+        </catalogImage>
+        <shopImage>
+            img/Vapes/Leaves/Present/1_21_9.jpg
+        </shopImage>
+        <tagLine>
+            Лес ваших фантазий
+        </tagLine>
+        <description>
+            Эволюционный скачок паровых устройств. Он поможет тем, кто хочет отказаться от никотиновой зависимости. Мягкий и стильный дизайн и внутреннее противостояние всему искусственному.
+        </description>
+        <sets>
+            Высота: 103.9 мм
+            Ширина: 23.4 мм
+            Толщина: 23.4 мм
+            Аккумулятор: 3000 мАч
+            Ток зарядки: 1А
+            Мощность: 20/26 Вт
+            Ёмкость картриджа: 1.5 мл
+            Сопротивление: 0.4 Ом
+        </sets>
+        <secondImage>
+            img/Vapes/Leaves/Transparent/LeavesVapePresent2_21_9.png
+        </secondImage>
+        <capabilities>
+            <capability>
+                <capocaption>Лёгкий парогенератор</capocaption>
+                <capoimage>img/Vapes/Leaves/Capabilities/leavescap1.png</capoimage>
+            </capability>
+            <capability>
+                <capocaption>Натуральные компоненты</capocaption>
+                <capoimage>img/Vapes/Leaves/Capabilities/leavescap2.png</capoimage>
+            </capability>
+            <capability>
+                <capocaption>Следите за потреблением</capocaption>
+                <capoimage>img/Vapes/Leaves/Capabilities/leavescap3.png</capoimage>
+            </capability>
+        </capabilities>
+        <cost>
+            79.99
+        </cost>
+        <sidePhoto>
+            img/Vapes/Leaves/Transparent/LeavesVapePresent2_21_9.png
+        </sidePhoto>
+    </item>
+    <item name="tmtfs">
+        <name>TMT 46</name>
+        <catalogImage>
+            img/Vapes/TMT/46/Present/fspresent.jpg
+        </catalogImage>
+        <shopImage>
+            img/Vapes/TMT/46/Present/fspresent.jpg
+        </shopImage>
+        <tagLine>
+            Создай волну
+        </tagLine>
+        <description>
+            Самый навороченный на рынке. Технология VapeTouch со встроенным Taptic Engine 5 подарит вам невероятный опыт использования и массу положительных впечатлений, а технология TransMediate позволит вам ощутить всю палитру вкусов. Внимание: на данный момент предоставляется предзаказ устройства. Купить устройство сразу можно будет 16 июня.
+        </description>
+        <sets>
+            Высота: 136.9 мм
+            Ширина: 92.4 мм
+            Толщина: 13.4 мм
+            Аккумулятор: 6000 мАч
+            Ток зарядки: 2А
+            Мощность: 50/59 Вт
+            Ёмкость картриджа: 1.9 мл
+            Сопротивление: 0.4 Ом
+        </sets>
+        <secondImage>
+            img/Vapes/TMT/46/Transparent/fstransparent2.png
+        </secondImage>
+        <capabilities>
+            <capability>
+                <capocaption>
+                    Инновационная структура
+                </capocaption>
+                <capoimage>
+                    img/Vapes/TMT/46/Capabilities/fscapSection1.png
+                </capoimage>
+            </capability>
+            <capability>
+                <capocaption>
+                    Эргономичный дизайн
+                </capocaption>
+                <capoimage>
+                    img/Vapes/TMT/46/Capabilities/fscapSection2.png
+
+                </capoimage>
+            </capability>
+            <capability>
+                <capocaption>
+                    Непокоримая мощность
+                </capocaption>
+                <capoimage>
+                    img/Vapes/TMT/46/Capabilities/fscapSection3.png
+                </capoimage>
+            </capability>
+        </capabilities>
+        <cost>
+            169.99
+        </cost>
+        <sidePhoto>
+            img/Vapes/TMT/46/Transparent/fstransparent2.png
+        </sidePhoto>
+    </item>
+</items>
